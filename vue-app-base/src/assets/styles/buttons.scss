@@ -1,0 +1,34 @@
+/*-------------------------------------
+ *	BUTTONS MASTER STYLES
+ *-------------------------------------
+ *
+ *	Stylesheet dedicated to all button
+ *	styles including colour and typography
+ *
+/-------------------------------------*/
+
+// Base Button 
+.rr-base-btn {
+  width: auto;
+  padding: 20px 20px;
+  transition: all, .3s;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+// Button Colors
+
+.rr-action-btn {
+  color: $charcoal-grey;
+  background: $escavator-yellow;
+  border: 1px solid rgba(242,170,0,0);
+
+  &:hover {
+    color: $escavator-yellow;
+    background: $charcoal-grey;
+    border: 1px solid rgba(242,170,0,1);
+  }
+
+}
