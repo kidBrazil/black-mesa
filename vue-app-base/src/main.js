@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 
 // [ EVENT BUS SETUP ]----------------
 // 
@@ -46,4 +46,4 @@ export const eventBus = new Vue();
 new Vue({
   el: '#app',
   render: h => h(App)
-})
+});

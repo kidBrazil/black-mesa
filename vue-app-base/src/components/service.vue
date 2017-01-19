@@ -38,15 +38,14 @@
         return require('../assets/images/' + path);
       }
     }
-
-
-	}
+	};
 
 </script>
 
 
 
 <style lang="scss">
+  
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
@@ -76,9 +75,9 @@
       height: 8px;
       background: $escavator-yellow;
       border: none;
-      margin: 15px 0 30px 0;
+      margin: 15px 0 30px;
     }
-  }	
+  }
 
   .rr-service-content {
     background: $charcoal-grey;
@@ -88,19 +87,19 @@
     padding: 40px;
     text-align: center;
 
-    @media screen and ('$laptop-up-comp'){
+    @media screen and ('$laptop-up-comp') {
       float: right; 
       padding: 80px 0 80px 95px;
       text-align: left;
       margin-top: 0;
     }
 
-    @media screen and ('$laptop-only-comp'){
+    @media screen and ('$laptop-only-comp') {
       width: 36vw;
       
     }
     
-    @media screen and ('$desktop-up-comp'){
+    @media screen and ('$desktop-up-comp') {
       width: 34vw;
     }
   }
@@ -109,10 +108,10 @@
     font-size: 9.8vw;
     letter-spacing: .1vw;
 
-    @media screen and ('$tablet-only-comp'){
+    @media screen and ('$tablet-only-comp') {
       font-size: 8.4vw;
     }
-    @media screen and ('$laptop-up-comp'){
+    @media screen and ('$laptop-up-comp') {
       font-size: 6.4vw;
       letter-spacing: .1vw;
     }
@@ -123,13 +122,12 @@
     letter-spacing: .66vw;
     font-weight: 700;
 
-    @media screen and ('$tablet-only-comp'){
+    @media screen and ('$tablet-only-comp') {
       font-size: 5.4vw;
     }
-    @media screen and ('$laptop-up-comp'){
+    @media screen and ('$laptop-up-comp') {
       font-size: 3.4vw;
     }
-
   }
 
   .rr-body-heading {
@@ -139,26 +137,27 @@
   }
   
   .rr-service-body {
-    margin: 20px 0 40px 0;
+    margin: 20px 0 40px;
   }
 
   /* Wrapper Hack - It's Scoped so it's ok =) */
+  
   /* Hack can be improved, there is some repetitiong.. running out of time.*/
 
   .rr-wrapper-hack {
-    @media screen and ('$phone-only-comp'){
+    @media screen and ('$phone-only-comp') {
       width: 100%;
       padding: 0 5%;
       background: $charcoal-grey;
     }
-    @media screen and ('$tablet-only-comp'){
+    @media screen and ('$tablet-only-comp') {
       width: 100%;
       padding: 0 8%;
       background: $charcoal-grey;
       max-width: 100%;
-
     }
   }
 
 	/*--------------------------------------*/
+
 </style>

@@ -13,37 +13,43 @@
 /*----
 	Global Reset
 -----*/
-@import "./reset.scss";
+@import './reset.scss';
+
 /*----
 	Global Variables
 -----*/
-@import "./variables.scss";
+@import './variables.scss';
+
 /*----
 	Global Mixins
 -----*/
-//Not Used in this project
-//@import "./mixins.scss";
+
 /*----
 	Responsive Breakpoints
 -----*/
-@import "./responsive.scss";
+@import './responsive.scss';
+
 /*----
 	Global Typography
 -----*/
-@import "./typography.scss";
+@import './typography.scss';
+
 /*----
  	Utilities
 -----*/
-@import "./utilities.scss";
+@import './utilities.scss';
+
 /*----
  	Flex
 -----*/
-@import "./flex.scss";
+@import './flex.scss';
+
 /*---
   Scaffold
 -----*/
-@import "./scaffolding.scss";
+@import './scaffolding.scss';
+
 /*----
   Buttons
 -----*/
-@import "./buttons.scss";
+@import './buttons.scss';

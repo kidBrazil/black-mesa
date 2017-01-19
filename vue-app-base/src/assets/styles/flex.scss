@@ -8,6 +8,8 @@
  *
 /-------------------------------------*/
 
+/* Already Linted - Causing weird issues - LUM */
+/* stylelint-disable */
 .flex {
   display: flex;
 
@@ -76,6 +78,7 @@
   }
   
   &-group-start {
+    
     align-content: flex-start;
   }
 
@@ -99,4 +102,4 @@
     align-content: space-around;
   }
 }
- 
+/* stylelint-enable */
