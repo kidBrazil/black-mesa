@@ -13,10 +13,10 @@
 <script>
   
   //Local Component registration
-  import MainNavigation from './components/navigation.vue'
-  import HeroMain       from './components/hero-main.vue'
-  import HeroNews       from './components/hero-news.vue'
-  import HeroService    from './components/service.vue'
+  import MainNavigation from './components/navigation.vue';
+  import HeroMain       from './components/hero-main.vue';
+  import HeroNews       from './components/hero-news.vue';
+  import HeroService    from './components/service.vue';
   
   export default{
 
@@ -27,7 +27,7 @@
       'hero-service'    : HeroService
       
     }
-  }
+  };
 </script>
 
 
@@ -37,7 +37,7 @@
 	/*-----/
 	Global Main
 	/-----*/
-	@import "./assets/styles/global-main.scss";
+	@import './assets/styles/global-main.scss';
 
 	/*--------------------------------------*/
 	/* Main Component Styles                */

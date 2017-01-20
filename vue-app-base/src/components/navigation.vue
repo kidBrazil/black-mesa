@@ -60,23 +60,26 @@
         return require('../assets/images/' + path);
       }
     }
-
-    
-  }
+  };
 
 </script>
 
 
 
 <style lang="scss" scoped>
+
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
-  @import '../assets/styles/component-lean-main.scss';
 
-	/*--------------------------------------*/
-	/* Main Component Styles                */
-	/*--------------------------------------*/
+  /* Disable because they are already linted */
+  /* stylelint-disable */
+  @import '../assets/styles/component-lean-main.scss';
+  /* stylelint-enable */
+
+  /*--------------------------------------*/
+  /* Main Component Styles                */
+  /*--------------------------------------*/
   .rr-main-nav {
     width: 100%;
     position: fixed;
@@ -86,7 +89,7 @@
     z-index: 10;
     transition: all, .3s;
     background: rgba(51,51,51,0);
-    
+
     .rr-main-nav-branding {
       max-width: 83px;
       min-width: 73px;
@@ -111,12 +114,12 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0);
       transition: all, .3s;
 
-      @media screen and ('$tablet-up-comp'){
+      @media screen and ('$tablet-up-comp') {
         margin: 0 30px;
       }
 
       &:hover {
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        text-shadow: 1px 1px 3px rgba(0,0,0,.6);
       }
 
       &:last-child {
@@ -128,11 +131,11 @@
   .rr-main-nav-visibility {
     background: rgba(51,51,51,.6);
 
-    &:hover{
+    &:hover {
       background: rgba(51,51,51,.9);
     }
   }
 
-  
-	/*--------------------------------------*/
+  /*--------------------------------------*/
+
 </style>

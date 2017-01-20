@@ -46,22 +46,22 @@
         lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare urna non hendrerit mattis. Maecenas ac lorem eu.'
       };
     },
-
-	}
+	};
 
 </script>
 
 
 
 <style lang="scss" scoped>
+
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
   @import '../assets/styles/component-lean-main.scss';
 
-	/*--------------------------------------*/
-	/* Main Component Styles                */
-	/*--------------------------------------*/
+  /*--------------------------------------*/
+  /* Main Component Styles                */
+  /*--------------------------------------*/
   .rr-hero-news {
     padding: 152px 0;
   }
@@ -78,7 +78,7 @@
     width: 100%;
     margin-bottom: 55px;
 
-    @media screen and ('$desktop-up-comp'){
+    @media screen and ('$desktop-up-comp') {
       width: 40%;
       margin-bottom: 0;
     }
@@ -87,7 +87,7 @@
       margin-bottom: 15px;
       letter-spacing: 3px;
 
-      @media screen and ('$desktop-up-comp'){
+      @media screen and ('$desktop-up-comp') {
         margin-bottom: 45px;
       }
     }
@@ -122,22 +122,23 @@
         margin-bottom: 0;
       }
 
-      @media screen and ('$desktop-up-comp'){
+      @media screen and ('$desktop-up-comp') {
         width: 50%;
         padding: 0 50px 0 20px;
       }
 
       /* Can be replaced with Quantity Query */
+      
       &:last-child {
         padding: 0;
 
-        @media screen and ('$desktop-up-comp'){
+        @media screen and ('$desktop-up-comp') {
           padding: 0 20px 0 50px;
         }
       }
     }
-    
-    .rr-hero-news-heading{
+
+    .rr-hero-news-heading {
       width: 100%;
       letter-spacing: 2px;
       word-spacing: 2px;
@@ -155,7 +156,7 @@
 
     .rr-read-more {
       color: $black;
-      transition: all , .3s;
+      transition: all, .3s;
 
       &:hover {
         color: $escavator-yellow;
@@ -164,4 +165,5 @@
   }
 
 	/*--------------------------------------*/
+
 </style>

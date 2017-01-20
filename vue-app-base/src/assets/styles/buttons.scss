@@ -7,10 +7,10 @@
  *
 /-------------------------------------*/
 
-// Base Button 
+/* Base Button */
 .rr-base-btn {
   width: auto;
-  padding: 20px 20px;
+  padding: 20px;
   transition: all, .3s;
   text-transform: uppercase;
   font-size: 14px;
@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-// Button Colors
+/* Button Colors */
 
 .rr-action-btn {
   color: $charcoal-grey;
@@ -30,5 +30,4 @@
     background: $charcoal-grey;
     border: 1px solid rgba(242,170,0,1);
   }
-
 }

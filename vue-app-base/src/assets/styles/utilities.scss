@@ -32,7 +32,7 @@
   vertical-align: bottom;
 }
 
-.u-align-middle{ 
+.u-align-middle { 
   vertical-align: middle;
 }
 
@@ -43,6 +43,6 @@
 .u-hidden-phone {
   
   @media #{$phone-only} {
-    display:none;
+    display: none;
   }
 }

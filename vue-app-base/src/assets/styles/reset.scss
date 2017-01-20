@@ -1,6 +1,10 @@
 /*-------------------------------------
  *	ERIC MEYER RESET
 /-------------------------------------*/
+
+/* Disabled because it is just a reset! */
+/* stylelint-disable */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,3 +54,5 @@ html {
   *, *:before, *:after {
   box-sizing: inherit;
 }
+
+/* stylelint-enable */
