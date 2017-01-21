@@ -13,6 +13,11 @@
 // 7- Setup Authentication
 // ----------------------------------------
 //
+// CRITICAL TODO - DEPLOYMENT ------------
+//
+// 1- Server MUST be setup to serve [ index.html ]
+// This launches the application and handles the 
+// url parcing.
 
 // Require Imports
 const path = require('path')

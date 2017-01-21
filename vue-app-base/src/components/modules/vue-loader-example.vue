@@ -21,6 +21,9 @@
         <li v-for="u in users">
           {{ u.username  }}  |  {{ u.email  }}
         </li>
+        <hr>
+        <!-- Use Method to Navigate -->
+        <button @click="navigateToHome"> Navigate Home </button>
       </div>
     </div> 
   </div>
@@ -114,6 +117,11 @@
             this.users = resultArray;
           });
       },
+      navigateToHome() {
+        // Use push to push route request up the stack
+        // this allows for Back/Fowrad to still function
+        this.$router.push({path:'/'});
+      }
     },
     
     // Created lifecycle hoook
@@ -157,7 +165,7 @@
 
   /* Disable because they are already linted */
   /* stylelint-disable */
-  @import '../assets/styles/component-lean-main.scss';
+  @import '../../assets/styles/component-lean-main.scss';
   /* stylelint-enable */
 
   /*--------------------------------------*/

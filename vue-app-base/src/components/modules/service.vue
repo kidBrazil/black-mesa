@@ -35,7 +35,7 @@
 
     methods: {
       loadImage(path){
-        return require('../assets/images/' + path);
+        return require('../../assets/images/' + path);
       }
     }
 	};
@@ -49,7 +49,7 @@
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
-  @import '../assets/styles/component-lean-main.scss';
+  @import '../../assets/styles/component-lean-main.scss';
 
 	/*--------------------------------------*/
 	/* Main Component Styles                */

@@ -1,10 +1,9 @@
 <template>
   <main id="app">
     <main-navigation></main-navigation>
-    <hero-main></hero-main>
-    <hero-news></hero-news>
-    <hero-service></hero-service>
-    <vue-loader-example></vue-loader-example>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </main>
 </template>
 
@@ -14,21 +13,12 @@
 <script>
   
   //Local Component registration
-  import MainNavigation from './components/navigation.vue';
-  import HeroMain       from './components/hero-main.vue';
-  import HeroNews       from './components/hero-news.vue';
-  import HeroService    from './components/service.vue';
-  import LoaderExample  from './components/vue-loader-example.vue';
+  import MainNavigation from './components/shared/navigation.vue';
   
   export default{
 
     components: {
-      'main-navigation' : MainNavigation,
-      'hero-main'       : HeroMain,
-      'hero-news'       : HeroNews,
-      'hero-service'    : HeroService,
-      'vue-loader-example' : LoaderExample
-      
+      'main-navigation' : MainNavigation
     }
   };
 </script>
@@ -37,16 +27,23 @@
 
 <style lang="scss">
 
-	/*-----/
-	Global Main
-	/-----*/
-	@import './assets/styles/global-main.scss';
+/*-----/
+Global Main
+/-----*/
+@import './assets/styles/global-main.scss';
 
-	/*--------------------------------------*/
-	/* Main Component Styles                */
-	/*--------------------------------------*/
+/*--------------------------------------*/
+/* Main Component Styles                */
+/*--------------------------------------*/
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s;
+}
 
-	/*--------------------------------------*/
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
 </style>
