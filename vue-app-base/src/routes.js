@@ -10,7 +10,12 @@ export const routes = [
     component: homeMain
   },
   {
-    path: '/testroute',
+    path: '/testroute/:id',
+    component: TestRoute
+  },
+  // Example with Url Argument
+  {
+    path: '/testroute2/:id',
     component: TestRoute
   }
 ];

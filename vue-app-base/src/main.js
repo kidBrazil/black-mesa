@@ -22,9 +22,17 @@ Vue.http.interceptors.push( (request, next) => {
 });
 
 
-// Setup Router pointing to external file
+// Router Setup - [import]
+// --------------------------------
+// Server must be set to AWLAYWAS return
+// [index.html] file for history mode to work.
+//
+// History mode in vue-router permits forgoing
+// the ugly "#" hash syntax on Url's.
+//
 const router = new VueRouter ({
-  routes: routes
+  routes: routes,
+  mode: 'history'
 });
 
 // [ EVENT BUS SETUP ]----------------

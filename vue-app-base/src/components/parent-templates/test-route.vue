@@ -1,9 +1,12 @@
 <template>
-  <main id="app">
+  <section class="main-section">
     <main-navigation></main-navigation>
     <hero-main></hero-main>
+    <div>
+      <h1>Test ID {{ id }}</h1>
+    </div>
     <vue-loader-example></vue-loader-example>
-  </main>
+  </section>
 </template>
 
 
@@ -17,7 +20,19 @@
   import LoaderExample  from '../modules/vue-loader-example.vue';
   
   export default{
-
+    data: function (){
+      // Grabbing Route Parameters
+      // In this case the ID
+      return {
+        id: this.$route.params.id
+      };
+    },
+    // Watcher to detect route changes
+    watch: {
+      '$route'(to, from){
+        this.id = to.params.id;
+      }
+    },
     components: {
       'main-navigation' : MainNavigation,
       'hero-main'       : HeroMain,

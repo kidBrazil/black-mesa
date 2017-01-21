@@ -5,7 +5,15 @@
         <img :src="loadImage(homeBrand)">
       </a>
       <div class="rr-main-nav-links u-uppercase">
-        <a v-for="link in links" :href="link.linkUrl" :title="link.linkTitle" aria-role="menuitem">{{ link.linkName  }}</a> 
+        <router-link 
+          v-for="link in links" 
+          :to="link.route" 
+          active-class="rr-active" 
+          :title="link.linkTitle" 
+          aria-role="menuitem" 
+          exact>
+            {{ link.linkName  }}
+       </router-link> 
       </div>
     </div>
   </nav>
@@ -15,24 +23,25 @@
 
 <script>
   export default{
-    
+    // <router-link> element is a custom element derived from vue-router. use :to - to bind. 
     data: function(){
       return{
+        // Refer to routes.js file for available routes.
         links: [
           {
             linkName: 'About',
             linkTitle: 'About Us',
-            linkUrl: '#'
+            route: '/'
           },
           {
             linkName: 'Products',
             linkTitle: 'Our Products',
-            linkUrl: '#'
+            route: '/testroute/98723123'
           },
           {
             linkName: 'Contact',
             linkTitle: 'Contact Us',
-            linkUrl: '#'
+            route: '/testroute2/88372198731'
           }
         ],
 
@@ -125,6 +134,10 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    .rr-active {
+      color: $escavator-yellow;
     }
   }
 

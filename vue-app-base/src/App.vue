@@ -1,7 +1,9 @@
 <template>
   <main id="app">
     <main-navigation></main-navigation>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </main>
 </template>
 
@@ -25,14 +27,23 @@
 
 <style lang="scss">
 
-	/*-----/
-	Global Main
-	/-----*/
-	@import './assets/styles/global-main.scss';
+/*-----/
+Global Main
+/-----*/
+@import './assets/styles/global-main.scss';
 
-	/*--------------------------------------*/
-	/* Main Component Styles                */
-	/*--------------------------------------*/
+/*--------------------------------------*/
+/* Main Component Styles                */
+/*--------------------------------------*/
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
 </style>
