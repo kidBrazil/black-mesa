@@ -1,5 +1,8 @@
 import Vue from 'vue';
+import VueResource from 'vue-resource';
 import App from './App.vue';
+
+Vue.use(VueResource);
 
 // [ EVENT BUS SETUP ]----------------
 // 
@@ -45,5 +48,11 @@ export const eventBus = new Vue();
 // Render Function
 new Vue({
   el: '#app',
+  http: {
+    root: '/root',
+    headers: {
+      Authorization: 'Basic YXBp0nBhc3N3b3Jk'
+    }
+  },
   render: h => h(App)
 });
