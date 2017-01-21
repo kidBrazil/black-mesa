@@ -1,5 +1,21 @@
 import Vue from 'vue';
+import VueResource from 'vue-resource';
 import App from './App.vue';
+
+// [ VUE-RESOURCE SETUP ] ------------
+//
+
+// Initialize VueResource
+Vue.use(VueResource);
+
+// Set Global Root path
+Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
+
+// Set Global Intercept 
+Vue.http.interceptors.push( (request, next) => {
+  console.log(request);
+  next(); 
+});
 
 // [ EVENT BUS SETUP ]----------------
 // 
@@ -45,5 +61,11 @@ export const eventBus = new Vue();
 // Render Function
 new Vue({
   el: '#app',
+  http: {
+    root: '/root',
+    headers: {
+      Authorization: 'Basic YXBp0nBhc3N3b3Jk'
+    }
+  },
   render: h => h(App)
 });
