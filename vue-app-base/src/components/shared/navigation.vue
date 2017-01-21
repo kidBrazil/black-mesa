@@ -57,7 +57,7 @@
 
     methods: {
       loadImage(path){
-        return require('../assets/images/' + path);
+        return require('../../assets/images/' + path);
       }
     }
   };
@@ -74,7 +74,7 @@
 
   /* Disable because they are already linted */
   /* stylelint-disable */
-  @import '../assets/styles/component-lean-main.scss';
+  @import '../../assets/styles/component-lean-main.scss';
   /* stylelint-enable */
 
   /*--------------------------------------*/

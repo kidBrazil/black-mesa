@@ -157,7 +157,7 @@
 
   /* Disable because they are already linted */
   /* stylelint-disable */
-  @import '../assets/styles/component-lean-main.scss';
+  @import '../../assets/styles/component-lean-main.scss';
   /* stylelint-enable */
 
   /*--------------------------------------*/

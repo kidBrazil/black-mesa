@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
 import App from './App.vue';
 
-// [ VUE-RESOURCE SETUP ] ------------
-//
+//Import Routes
+import { routes  } from './routes.js';
 
-// Initialize VueResource
+// [ VUE-RESOURCE SETUP ] ------------
+
+// Initialize vue-resource | vue-router
 Vue.use(VueResource);
+Vue.use(VueRouter);
 
 // Set Global Root path
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
@@ -15,6 +19,12 @@ Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 Vue.http.interceptors.push( (request, next) => {
   console.log(request);
   next(); 
+});
+
+
+// Setup Router pointing to external file
+const router = new VueRouter ({
+  routes: routes
 });
 
 // [ EVENT BUS SETUP ]----------------
@@ -67,5 +77,6 @@ new Vue({
       Authorization: 'Basic YXBp0nBhc3N3b3Jk'
     }
   },
+  router,
   render: h => h(App)
 });
