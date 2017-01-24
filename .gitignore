@@ -1,0 +1,13 @@
+*/node_modules
+**/*/node_modules
+/node_modules
+/dist
+*/dist
+**/*/dist
+*.swp
+.git
+.Trashes
+.DS_Store
+.DS_Store?
+npm-debug.log
+**/*/npm-debug.log
