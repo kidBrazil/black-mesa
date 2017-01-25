@@ -1,51 +1,54 @@
-# Project Setup 
+#Project Setup 
 
 This document provides step-by-step instructions on how to setup and run the project on your local development machine.
 
 
-## Install Node.js & NPM
+##Install Node.js & NPM
 
 This project has as it's main dependency a Node server architecture so it must be installed on your development machine before we proceed with the provided setup script.
 
-### Mac OSX
+###Mac OSX
 
 1. [Install xCode](http://developer.apple.com/technologies/tools/)
 2. [Install git](http://help.github.com/mac-git-installation/)
 3. [Configure git](./github.md)
 4. Install Node by running...
 ```
-//Go To Home and Create a folder...
-cd ~
-mkdir node-install
-cd node-install
+//Install Homebrew for package management
+//Documentation on brew can be found at http://brew.sh
 
-//Clone Node...
-git clone git://github.com/ry/node.git
-cd node
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-//Run Configure
-./configure
+//Use Homebrew to install node.
+brew install node
 
-//Make Installation
-make
-sudo make install
 ```
 
 ###Debian
 
 1.Install Node:
 ```
-//Update apt-get database
-sudo apt-get update
+// Prepare install
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
 
-//Install Node
-sudo apt-get install node
-
-//Install NPM
-sudo apt-get install npm
+//Install via apt-get
+sudo apt-get install -y nodejs
 ```
 
-### Other OS
+###Windows
+
+1. Install [Chocolatey](http://chocolatey.org/install) by opening a Admin Power Level Shell and running:
+```
+iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+```
+
+2. Install Node via Chocolatey by running on the same prompt:
+```
+cinst nodejs.install
+```
+
+###Other OS
+
 Please visit the (Node.Js)[http://nodejs.org] official website for guides on installing node on your particular OS.
 
 ## Run The Installation Script.
