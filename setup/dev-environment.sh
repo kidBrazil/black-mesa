@@ -140,13 +140,16 @@ case "$continue" in
     echo "${YELLOW}- Code Styleguide"
     echo "${YELLOW}- Linting"
     echo "${YELLOW}- Best Practices"
+    echo "${YELLOW}- Code Recepies"
     echo "${YELLOW}- Routes [vue-router]"
     echo "${YELLOW}- VueX [State Management]"
     echo "${YELLOW}- Vue Resource [Ajax Wrapper]"
     echo "${YELLOW}- Firebase [OODB]"
     echo "${YELLOW}- Templating Structure"
+    echo "${YELLOW}- Responsive Breakpoints"
     echo "${YELLOW}- SCSS Structure"
-    echo "${YELLOW}- SCSS Styleguide${NC}"
+    echo "${YELLOW}- SCSS Styleguide"
+    echo "${YELLOW}- And More...${NC}"
     sleep 3s
     echo
     echo "${YELLOW}Booting Up Test Server on [ ${GREEN}localhost:8080${NC} ]"
