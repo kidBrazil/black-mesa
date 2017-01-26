@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 clear
-# [ Black Mesa - Vue.JS ]
+# [ Black Mesa - Vue.js Dependencies ]
+# ------------------------------------------------------------------
+# Lucas Moreira - l.moreira@live.ca 
+# ------------------------------------------------------------------
 # 
 # Setup Bash Script for installing Node dependencies and running dev server
 # with support for Windows | Mac | Linux architectures.
@@ -34,7 +37,6 @@ echo
 echo "__________________________________________________________________________________________"
 
 sleep 2s
-# TODO Modify Prompt
 echo
 echo "This Script will install and configure all the necessary Software & Dependencies to run the project."
 echo
@@ -68,7 +70,7 @@ echo
 # Ask User for permission
 echo "${YELLOW}--------------------------------------------${NC}"
 echo "${YELLOW}--------------------------------------------${NC}"
-read -p "${YELLOW}| Continue with installation?${NC}|${NC}  " answer
+read -p "${YELLOW}|   Continue with installation?   ${NC}|${NC}  " answer
 
 # [ Black Mesa ] Setup Script RUN
 clear

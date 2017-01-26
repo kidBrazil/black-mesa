@@ -35,6 +35,9 @@ This document covers the Node.js dependencies used in this project with links to
 ### [Server Architecture](./server.md "Server Architecture")
 This document covers the Node.js dependencies used in this project with links to their respective documentations.
 
+### [AJAX With vue-resource](./vue-resource.md "vue-resource Ajax Wrapper")
+Documentation covering the implementation and use of vue-resource for asynchronous AJAX requests.
+
 ### [Deployment Strategy](./deployment.md "Deployment")
 This document covers the Node.js dependencies used in this project with links to their respective documentations.
 
