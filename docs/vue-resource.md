@@ -9,7 +9,7 @@ The setup for vue-resource is actually quite simple and simply requires VueResou
 ##Configuration
 There are several configuration options available for vue-resource and you can find more information in the official [documentation](https://github.com/pagekit/vue-resource/tree/master/docs "Vue-Resource Documentation").
 
-```
+```javascript
 // main.js
 
 // Import vue-resource
@@ -28,7 +28,7 @@ Vue.http.options.root = 'http://some-resource.io';
 
 ##Standard *POST* Request
 
-```
+```javascript
 //my-component.vue
 
 // $http == vue-resource 
@@ -53,7 +53,7 @@ postData() {
 
 ##Standard *GET* Request
 
-```
+```javascript
 //my-component.vue
 
 // Sample GET Request (AJAX)
@@ -94,7 +94,7 @@ vue-resource ships with a few baked in default actions that you can use such as 
 
 [Using URI Template Syntax](http://medialize.github.io/URI.js/uri-template.html "URI Syntax")
 
-```
+```javascript
 //my-component.vue
 
 // For default actions to work we first need to tell vue-resource to accept custom actions and to have a default fall back
@@ -165,7 +165,7 @@ export default {
 #Interceptors
 Interceptors allow for rules to be created so requests coming in and out of the application can be modified or logged. This might now always be necessary but provides a great level of flexibility when creating an app.
 
-```
+```javascript
 // main.js
 
 // Setting up request interceptors.

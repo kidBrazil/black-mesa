@@ -32,7 +32,16 @@ Vue.http.interceptors.push( (request, next) => {
 //
 const router = new VueRouter ({
   routes: routes,
-  mode: 'history'
+  mode: 'history',
+
+  //Control Scrolling Behavior
+  scrollBehavior( to, from, savedPOsition ){
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
 });
 
 // [ EVENT BUS SETUP ]----------------
