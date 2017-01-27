@@ -6,12 +6,13 @@ import App from './App.vue';
 //Import Routes
 import { routes  } from './routes.js';
 
+import store from './store/store.js';
+
 // [ VUE-RESOURCE SETUP ] ------------
 
 // Initialize vue-resource | vue-router
 Vue.use(VueResource);
 Vue.use(VueRouter);
-
 // Set Global Root path
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
@@ -39,7 +40,7 @@ const router = new VueRouter ({
     if (to.hash) {
       return {
         selector: to.hash
-      }
+      };
     }
   }
 });
@@ -69,7 +70,7 @@ const router = new VueRouter ({
 // Export as Constant
 //
 
-export const eventBus = new Vue();
+//export const eventBus = new Vue();
 
 //----------------------------------
 // [ ACCESS EVENT BUS ]
@@ -95,5 +96,6 @@ new Vue({
     }
   },
   router,
+  store,
   render: h => h(App)
 });
