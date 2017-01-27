@@ -6,11 +6,9 @@
 //
 // TODO ------------------------------------
 //
-// 4- Setup VueX - PRIORITY
-// 5- Setup I18n style localization
-// 5- Setup Routing
-// 6- Setup DB
-// 7- Setup Authentication
+// 1- Setup I18n style localization
+// 2- Setup DB
+// 3- Setup Authentication
 // ----------------------------------------
 //
 // CRITICAL TODO - DEPLOYMENT ------------

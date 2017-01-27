@@ -63,10 +63,27 @@ Outsourced routing table.
 
 //Import parent template components
 import Home from './component/home.vue'
-import User from './component/user.vue'
-import UserProfile from './component/user-profile.vue'
-import UserEdit from './component/user-edit.vue'
+import LoggedIn from './component/logged-in.vue'
 
+//Lazy Load Routes...
+//The appended argument 'user' will group these into the same bundle for lazy loading.
+const User = resolve => {
+  require.ensure(['./component/user.vue'], () => {
+    resolve( require('./component/user.vue'));
+  }, 'user');
+};
+
+const UserProfile = resolve => {
+  require.ensure(['./component/user-profile.vue'], () => {
+    resolve( require('./component/user-profile.vue')  );
+  }, 'user');
+};
+
+const UserEdit = resolve => {
+  require.ensure(['./component/user-edit.vue'], () => {
+    resolve( require('./component/user-edit.vue')  );
+  }, 'user');
+};
 // Export Constant...
 export const routes =[
   
@@ -74,9 +91,26 @@ export const routes =[
   {
     path: '', component: Home
   },
+  // Guarded Routes...
+  {
+    path: '/loggedin/:id', component: LoggedIn,
+    // BeforeEnter() Route Guard...
+    beforeEnter: ( to, from, mext  ) => {
+      //check if user is authenticated for example..
+      if (loggedIn) {
+        // Go ahead and continue...
+        next();
+      }
+      else {
+        //Prevent routing..
+        next(false);
+      }
+      
+    }
+  },
+  // Child Routes...
   {
     path: '/user', component: User, children: [
-      //Child Routes...
       {
         // resolves to /user/:id/profile/
         path: ':id/profile', component: UserProfile, name: 'userProfile'
@@ -138,7 +172,6 @@ To use the router you must set a router-view element so that Vue knows where to 
         // This.id maps to params.id
         this.id = to.params.id;
       }
-    
     }
     methods: {
       navigateToHome() {
