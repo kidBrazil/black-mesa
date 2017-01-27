@@ -11,7 +11,8 @@ const state = {
 };
 
 //TODO
-//Add buckets and exports for..
+//
+//Separate Getters/actions/mutations into their own files
 //
 // - Getters
 // - Actions
