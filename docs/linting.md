@@ -14,3 +14,4 @@ The linter will run through all of the .vue files and look for SCSS to lint.
 ##Linting of .scss files in the structure
 
 The linting of all other SCSS files excluding vendor and Node dependencies is handled by Webpack automatically and do not require any extra tasks.
+

@@ -1,6 +1,7 @@
 # Project Node Dependencies
 This document will cover a brief listing of the dependencies being used on this project.
 
+---
 
 ## Main Dependencies
 * [Node.js](https://nodejs.org/en/docs/ "Node Js documentation")

@@ -38,14 +38,14 @@ sudo apt-get install -y nodejs
 ###Windows
 
 1. Install [Chocolatey](http://chocolatey.org/install) by opening a Admin Power Level Shell and running:
-```
-iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-```
+...```
+...iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+...```
 
 2. Install Node via Chocolatey by running on the same prompt:
-```
-cinst nodejs.install
-```
+...```
+...cinst nodejs.install
+...```
 
 ###Other OS
 
