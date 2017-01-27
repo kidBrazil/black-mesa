@@ -34,7 +34,7 @@ This section will cover the branching workflow to be followed when submitting co
 ###Fetch & Update Master
 So you got your first task or feature to tackle. The first thing you are going to do is to make sure that your **master** branch is up to date by running.
 
-```
+```bash
 git fetch && git checkout master && git pull
 ```
 
@@ -42,7 +42,7 @@ git fetch && git checkout master && git pull
 Now, cut a **feature** branch using the following naming convention:
 *feature/{ticket}-descriptive-name* where "{ticket}" is replaced with your Jira ticket number
 
-```
+```bash
 // Create Branch called feature/BM-101-setup-authentication-service
 git checkout -b feature/BM-101-setup-authentication-service
 
@@ -63,7 +63,10 @@ Once you have finished your work, you must submit your code for *Code Review* be
 ---
 ####Rebase Feature Branch With Master
 First we must rebase the branch with Master so we can be prompted to squash.
-```git rebase -i origin/master ```
+
+```bash
+git rebase -i origin/master 
+```
 
 Now you will be prompted to select which of your commits you want to Keep, Reword or Squash. Take some time to read the instructions on the screen and select the appropriate Commit message you want to display.
 
@@ -79,7 +82,7 @@ If you must make changes to the code you submitted for review follow step **3** 
 
 Once your code has been reviewed and approved it is time to merge it to the current staging branch for QA testing.
 
-```
+```bash
 // Fetch latest staging branch
 git fetch && git checkout current-staging-branch && git pull origin current-staging-branch
 

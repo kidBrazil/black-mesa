@@ -13,7 +13,8 @@ This project has as it's main dependency a Node server architecture so it must b
 2. [Install git](http://help.github.com/mac-git-installation/)
 3. [Configure git](./github.md)
 4. Install Node by running...
-```
+
+```bash
 //Install Homebrew for package management
 //Documentation on brew can be found at http://brew.sh
 
@@ -27,7 +28,8 @@ brew install node
 ###Debian
 
 1.Install Node:
-```
+
+```bash
 // Prepare install
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
 
@@ -37,15 +39,17 @@ sudo apt-get install -y nodejs
 
 ###Windows
 
-1. Install [Chocolatey](http://chocolatey.org/install) by opening a Admin Power Level Shell and running:
-...```
-...iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-...```
+Install [Chocolatey](http://chocolatey.org/install) by opening a Admin Power Level Shell and running:
 
-2. Install Node via Chocolatey by running on the same prompt:
-...```
-...cinst nodejs.install
-...```
+```bash
+iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+```
+
+Install Node via Chocolatey by running on the same prompt:
+
+```bash
+cinst nodejs.install
+```
 
 ###Other OS
 
@@ -56,7 +60,8 @@ Now all you have to do is run the installation script. It will install all of th
 
 1. Navigate to the black-mesa root project directory. [~/black-mesa/]
 2. Execute the dev-environment.sh script by running:
-```
+
+```bash
 //Execute Bash Script
 ./setup/dev-environment.sh
 ```

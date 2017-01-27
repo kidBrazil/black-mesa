@@ -5,7 +5,8 @@ This document describes the routing scheme being used in this project. This is a
 Router setup is simple. It requires a couple of configurations to be set on main.js
 
 Check out the vue router documentation on [History Mode](https://router.vuejs.org/en/essentials/history-mode.html "History Mode Server Setup")
-```
+
+```javascript
 //main.js
 
 // Import vue-router..
@@ -19,11 +20,32 @@ Vue.use(VueRouter);
 // Setup Router...
 
 const router = newVueRouter ({
+  // Register Route object from routes.js
   routes,
-
   // Use History Mode to remove '#' from URL
   // Server must be configured to serve index.html on all requests.
-  mode: 'history'
+  mode: 'history',
+  // Control scrolling for anchor tag navigation
+  scrollBehavior( to, from, savedPosition  ){
+    //Return position for scrolling with {x: 0, y:0}
+
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
+});
+
+//Route Guarding - Check ingress global...
+router.beforeEach((to, from, next) => {
+  //Gets executed on all routes..
+  //keep generic...
+  console.log('logged route..')
+
+  //next() will allow the request to continue.
+  //you may also pass false to next to abord.
+  next();
 });
 
 new Vue({
@@ -36,7 +58,7 @@ new Vue({
 ##Routes.js
 Outsourced routing table.
 
-```
+```javascript
 //routes.js
 
 //Import parent template components
@@ -62,6 +84,16 @@ export const routes =[
       {
         // resolves to /user/:id/profile/edit
         path: ':id/profile/edit', component: UserEdit, name: 'userEdit'
+      },
+      {
+        // Path Redirection...
+        path: '/redirect',
+        redirect: '/user'
+      },
+      {
+        //Catch All Other input routes...
+        path: *,
+        redirect: '/'
       }
     
     ]}
@@ -72,7 +104,16 @@ export const routes =[
 <router-link
   tag="button"
   //to bound to named route.
-  :to="{ name: 'userEdit', params: { id: $route.params.id  } }"
+  :to="{ 
+    name: 'userEdit', 
+    params: { id: $route.params.id  }, 
+    query: { 
+      locale: 'en',
+      q: 100
+    },
+    // Passing Hash for anchor links and scrolling.
+    hash: '#desired-target-id'
+  }"
   class="primary">Edit User</router-linki>
 
 ```
@@ -80,7 +121,7 @@ export const routes =[
 ##Template
 To use the router you must set a router-view element so that Vue knows where to render the change.
 
-```
+```javascript
 <script>
   // Command Based navigatio
   export default {
@@ -116,4 +157,24 @@ To use the router you must set a router-view element so that Vue knows where to 
     <router-view></router-view>
   </div>
 </template>
+```
+
+##Named Router VIews
+You may also use named router views to keep the routing separate in instances with multiple interactive menus/sections.
+
+```html
+// Named Router View.
+<router-view> name="named-view"></router-view>
+
+//Main.js...
+
+//Adding Components object to specify named view components for router view.
+
+{
+  path: '', name: 'named', components: {
+    //List of named router views to mount on..
+    default: Home,
+    'named-view': NamedVIew
+  }
+}
 ```

@@ -7,7 +7,10 @@ The only caveat with this system is that SCSS contained within .vue files must b
 ##Manual Linting of SCSS contained in .Vue templates
 
 To manually lint your SCSS run the following task:
-```npm run lintcss```
+
+```bash
+npm run lintcss
+```
 
 The linter will run through all of the .vue files and look for SCSS to lint. 
 
