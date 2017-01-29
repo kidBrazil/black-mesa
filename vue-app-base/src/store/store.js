@@ -7,7 +7,7 @@ Vue.use(Vuex);
 
 // State Bucket..
 const state = {
-  count: 0
+  counter: 0
 };
 
 //TODO
@@ -21,19 +21,51 @@ const state = {
 // Getters
 const getters = {
   doubleCounter: state => {
-    return state.count * 2;
+    return state.counter * 2;
+  },
+  stringCounter: state => {
+    return state.counter + ' Clicks';
   }
 };
 
 // Mutations
 const mutations = {
-  increment: state => {
-    state.count++;
+  increment: (state, payload) => {
+    state.counter += payload;
+  },
+  decrement: (state, payload) => {
+    state.counter += payload;
+  }
+
+};
+
+
+// Actions
+const actions ={
+  // Context gives access to all methods..
+  // including commit.
+  increment: (context, payload) => {
+    // Async code...
+    context.commit('increment', payload);
+  },
+  // This es6 syntax ({method}) will
+  // deconstruct the object and pull only commit
+  decrement: ({ commit }, payload) => {
+    // Async Code...
+    commit('decrement', payload);
+  },
+  asyncIncrement: ({ commit }, payload) => {
+    setTimeout (()=>{
+      commit('increment', payload);
+    }, 1000);
   }
 };
+
 
 // Export package
 export default new Vuex.Store({
   state,
-  mutations
+  getters,
+  mutations,
+  actions
 });
