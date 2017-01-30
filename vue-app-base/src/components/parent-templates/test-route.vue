@@ -6,6 +6,8 @@
       <h1>Test ID {{ id }}</h1>
     </div>
     <vue-loader-example></vue-loader-example>
+    <results></results>
+    <counter></counter>
   </section>
 </template>
 
@@ -18,6 +20,8 @@
   import MainNavigation from '../shared/navigation.vue';
   import HeroMain       from '../modules/hero-main.vue';
   import LoaderExample  from '../modules/vue-loader-example.vue';
+  import Counter        from '../modules/Counter.vue';
+  import Results        from '../modules/Result.vue';
   
   export default{
     data: function (){
@@ -36,7 +40,9 @@
     components: {
       'main-navigation' : MainNavigation,
       'hero-main'       : HeroMain,
-      'vue-loader-example' : LoaderExample
+      'vue-loader-example' : LoaderExample,
+      'counter'       : Counter,
+      'results'       : Results
       
     }
   };

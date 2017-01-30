@@ -2,38 +2,32 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+// [ Shared Functions ]
+import * as getters from './actions.js';
+import * as mutations from './mutations.js';
+import * as actions from './actions.js';
+
+// [ Module Imports ]
+import counter from './modules/counter.js';
+
 // Tell Vue to use VueX
 Vue.use(Vuex);
 
 // State Bucket..
 const state = {
-  count: 0
+  value: 0
 };
 
-//TODO
-//
-//Separate Getters/actions/mutations into their own files
-//
-// - Getters
-// - Actions
-// - Mutations
-
-// Getters
-const getters = {
-  doubleCounter: state => {
-    return state.count * 2;
-  }
-};
-
-// Mutations
-const mutations = {
-  increment: state => {
-    state.count++;
-  }
+// [ Modules ]
+const modules = {
+  counter
 };
 
 // Export package
 export default new Vuex.Store({
   state,
-  mutations
+  getters,
+  mutations,
+  actions,
+  modules
 });
