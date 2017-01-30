@@ -26,7 +26,7 @@ const mutations = {
   decrement: (state, payload) => {
     state.counter -= payload;
   }
-}
+};
 
 // Actions
 const actions = {
@@ -47,7 +47,7 @@ const actions = {
       commit('increment', payload);
     }, 1000);
   }
-}
+};
 
 // Export
 export default {
@@ -55,4 +55,4 @@ export default {
   getters,
   mutations,
   actions
-}
+};

@@ -2,15 +2,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-// Getter Import
-import * as getters from './actions.js'
-// Mutation Imports
-import * as mutations from './mutations.js'
-// Action Imports
-import * as actions from './actions.js'
+// [ Shared Functions ]
+import * as getters from './actions.js';
+import * as mutations from './mutations.js';
+import * as actions from './actions.js';
 
 // [ Module Imports ]
-import counter from './modules/counter.js'
+import counter from './modules/counter.js';
 
 // Tell Vue to use VueX
 Vue.use(Vuex);

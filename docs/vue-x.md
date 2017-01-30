@@ -37,3 +37,11 @@ Please familiarize yourself with the concept of [Getters](https://vuex.vuejs.org
 
 ##Modules
 When working on this application please try to adhere to the [Module's](https://vuex.vuejs.org/en/modules.html) principles outlined in the official vue-x documents. Splitting off reusable pieces of the application into modules will make it more scalable and maintainable.
+
+---
+
+#Structure
+
+##Store.js
+Store.js will hold any central, global states directly on the body of the document itself. Central shared functions such as [ Getters / Actions / Mutations ] are imported to the global store object through this file as well. To keep things tidy, consider using the Modules patterns discussed above to group functionality that isn't shared and is specific to a component or section of the application.
+
