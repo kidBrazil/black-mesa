@@ -14,30 +14,41 @@
 // CRITICAL TODO - DEPLOYMENT ------------
 //
 // 1- Server MUST be setup to serve [ index.html ]
-// This launches the application and handles the 
-// url parcing.
+// on all requests and allow Vue to route.
 
 // Require Imports
 const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require ('html-webpack-plugin')
 
 // Module Exports
 module.exports = {
-  entry: './src/main.js',
+  // Asset Splitting [ Vendor | Build ]
+  entry: {
+    build: './src/main.js',
+    vendor: [
+      'vue',
+      'vue-resource',
+      'vue-router',
+      'vuex'
+    ]
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    publicPath: '',
+    filename: 'app/[name][hash].js'
   },
+  // Module Rules & Loaders
   module: {
     rules: [
       // Vue Linting
       {
         enforce: 'pre',
         test: /\.vue$/,
-        loader: 'eslint-loader',
+        use: 'eslint-loader',
         exclude: /node_modules/
       },
       // Template Processing
@@ -46,7 +57,10 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            'scss': 'vue-style-loader!css-loader?-autoprefixer!postcss-loader!sass-loader'
+            scss: ExtractTextPlugin.extract({
+              loader: 'css-loader?-autoprefixer!sass-loader!postcss-loader',
+              fallbackLoader: 'vue-style-loader'
+            })
           },
           // Must have postcss require autoprefixer for @import's to get piped.
           postcss: [
@@ -57,7 +71,7 @@ module.exports = {
       // JavaScript Processing
       {
         test: /\.js$/,
-        loader: 'babel-loader!eslint-loader',
+        use: ['babel-loader','eslint-loader'],
         exclude: /node_modules/
       },
       // Image Processing
@@ -67,7 +81,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]?[hash]'
+              name: 'assets/images/[name].[ext]?[hash]'
             }
           },
           // Image Compression
@@ -101,18 +115,27 @@ module.exports = {
                 interlaced: false,
                 optimizationLevel: 2
               }
-              //.svg
             }
           }
         ]
       }
     ]
   },
+  // Plugins & Post Processing
   plugins: [
+    // Auto Prefix & Linting
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ]  } }),
     new StyleLintPlugin({
       syntax: 'scss'
     }),
+    // Text Extraction & Chunking
+    new ExtractTextPlugin("assets/styles/styles[hash].css"),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ],
   resolve: {
     alias: {
@@ -131,7 +154,7 @@ module.exports = {
 
 
 if (process.env.NODE_ENV === 'production') {
-  // Require 
+  // Require Compression Plugin for Gzip
   const CompressionPlugin = require("compression-webpack-plugin");
   
   module.exports.devtool = '#source-map'

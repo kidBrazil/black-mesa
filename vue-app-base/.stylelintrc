@@ -5,18 +5,11 @@
     "color-hex-case": ["lower",{
       "message": "Lower case letters are easier to distinguish from numbers"
     }],
-    "comment-empty-line-before": [ "always", {
-      "ignore": ["stylelint-commands", "between-comments"]
-    } ],
     "indentation": [ 2, {
       "except": ["value"],
       "severity": "warning",
       "message": "Please Use 2 Spaces Or Lucas Gets Grumpy"
     }],
-    "rule-nested-empty-line-before": [ "always", {
-      "except": ["first-nested"],
-      "ignore": ["after-comment"]
-    } ],
     "unit-whitelist": ["vw","vh", "px", "%", "s"],
     "font-weight-notation": "numeric",
     "number-leading-zero": ["never", {
@@ -33,9 +26,6 @@
     }],
     "length-zero-no-unit": [true, {
       "message": "Zero is Unitless in CSS"
-    }],
-    "time-no-imperceptible": [true, {
-      "message": "Transition is too fast - is it needed? Increase time over 100ms min."
     }],
     "unit-case": ["lower", {
       "message" :"Lower case units are easier to distinguish from the numbers"
@@ -73,7 +63,6 @@
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after":"always",
     "block-no-empty": true,
-    "block-no-single-line": true,
     "block-opening-brace-space-before": "always",
     "selector-attribute-brackets-space-inside": "always",
     "selector-attribute-operator-space-after": "always",
@@ -84,7 +73,6 @@
     "selector-max-compound-selectors": [3,{
       "message": "Lets keep it to 3 Inception levels shall we?"
     }],
-    "selector-no-empty": true,
     "selector-no-id": true,
     "selector-no-universal": true,
     "selector-no-vendor-prefix": [true,{
@@ -96,7 +84,6 @@
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "single",
     "selector-pseudo-element-no-unknown": true,
-    "selector-root-no-composition": true,
     "selector-type-case": "lower",
     "selector-type-no-unknown": true,
     "selector-max-empty-lines": 0,
@@ -107,10 +94,6 @@
     "no-extra-semicolons": true,
     "no-invalid-double-slash-comments": [true, {
       "message": "Double Slashes are not recognized as CSS comments please use /* comment */"
-    }],
-    "stylelint-disable-reason": ["always-before", {
-      "message": "Always provide a reason before the styleling-disable"
     }]
-
   }
 }
