@@ -1,4 +1,4 @@
-#Project Setup 
+#:electric_plug:Project Setup 
 
 This document provides step-by-step instructions on how to setup and run the project on your local development machine.
 

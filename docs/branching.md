@@ -1,4 +1,4 @@
-#Branching Strategy
+#:vertical_traffic_light: Branching Strategy
 
 This document will cover the Branching Strategy and Development Workflow that must be followed while working on Black Mesa projects. These are designed to ensure speedy development while minimizing the potential of bugs and defects making their way to the master branch.
 
