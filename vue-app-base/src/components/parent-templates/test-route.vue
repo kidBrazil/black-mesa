@@ -1,6 +1,5 @@
 <template>
   <section class="main-section">
-    <main-navigation></main-navigation>
     <hero-main></hero-main>
     <div>
       <h1>Test ID {{ id }}</h1>

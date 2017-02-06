@@ -6,7 +6,6 @@
 //
 // TODO ------------------------------------
 //
-// 1- Setup I18n style localization
 // 2- Setup DB
 // 3- Setup Authentication
 // ----------------------------------------
@@ -31,6 +30,7 @@ module.exports = {
     build: './src/main.js',
     vendor: [
       'vue',
+      'vue-i18n',
       'vue-resource',
       'vue-router',
       'vuex'

@@ -1,18 +1,53 @@
+
+// [ Black-Mesa ] Project Entry --------------------------
+// Author: Lucas Moreira - l.moreira@live.ca
+
+// [ Vue.js ] -------------------------------------------
 import Vue from 'vue';
+import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 
-//Import Routes
+// Import Routes & Central Stores
 import { routes  } from './routes.js';
-
 import store from './store/store.js';
 
-// [ VUE-RESOURCE SETUP ] ------------
+// [ i18n - Internationalization ] ----------------------
 
-// Initialize vue-resource | vue-router
+// Configure I18n Internationalization Locales
+import en from './locales/en.js';
+import pt from './locales/pt.js';
+const locales = {
+  en,
+  pt
+};
+
+// Initialize vue-resource | vue-router | vue-i18n
+Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueRouter);
+
+// Set Language Default [ ENGLISH ]
+Vue.config.lang = 'en';
+
+// Create Global Method for accepting language change
+Vue.prototype.$locale = {
+  change (lang) {
+    Vue.config.lang = lang;
+  },
+  current () {
+    return Vue.config.lang;
+  }
+};
+
+// Set Key:value pairs for translation keys
+Object.keys(locales).forEach(function (lang) {
+  Vue.locale(lang, locales[lang]);
+});
+//-----------------------------------------------[ i18n ]
+
+// [ Vue Resource ] ------------------------------------
 // Set Global Root path
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
@@ -21,9 +56,10 @@ Vue.http.interceptors.push( (request, next) => {
   console.log(request);
   next(); 
 });
+//--------------------------------------[ vue-resource ]
 
 
-// Router Setup - [import]
+// [ Vue-Router ] ------------------------------------
 // --------------------------------
 // Server must be set to AWLAYWAS return
 // [index.html] file for history mode to work.
@@ -44,8 +80,9 @@ const router = new VueRouter ({
     }
   }
 });
+//--------------------------------------[ vue-router ]
 
-// Render Function
+// [ Main Vue Instance ] ----------------------------
 new Vue({
   el: '#app',
   http: {
