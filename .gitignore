@@ -5,6 +5,9 @@
 */dist
 **/*/dist
 *.swp
+*/*.swp
+**/*/*.swp
+**/**/*.swp
 .git
 .Trashes
 .DS_Store
@@ -12,3 +15,6 @@
 npm-debug.log
 **/*/npm-debug.log
 *.swo
+*/*.swo
+**/*/*.swo
+**/**/*.swo

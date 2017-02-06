@@ -1,4 +1,4 @@
-# Project Node Dependencies
+#:package: Project Node Dependencies
 This document will cover a brief listing of the dependencies being used on this project.
 
 ---
