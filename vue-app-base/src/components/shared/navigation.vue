@@ -16,6 +16,7 @@
        </router-link> 
       </div>
     </div>
+    <button @click="change()">CHANGE FFS</button>
   </nav>
 </template>
 
@@ -66,7 +67,16 @@
 
     methods: {
       loadImage(path){
-        return require('../../assets/images/' + path);
+        return '/' + require('../../assets/images/' + path);
+      },
+      // Change Language METHOD
+      change () {
+        let current = this.$locale.current();
+        if (current === 'en') {
+          this.$locale.change('pt');
+        } else {
+          this.$locale.change('en');
+        }
       }
     }
   };

@@ -10,6 +10,7 @@
           <div v-for="item in items" class="rr-hero-news-item" aria-role="document">
             <h3 class="rr-hero-news-heading">{{ item.heading }}</h3>
             <span class="rr-hero-news-date-category">{{ item.date }} | {{ item.category }}</span>
+            <h1>{{ $t("messages.hello") }}</h1>
             <p>{{ lorem }}</p>
             <a :href="item.readMore" :title="item.heading" class="rr-read-more u-heading-weight"> Read More </a>
           </div>
