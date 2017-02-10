@@ -67,7 +67,7 @@
       // Get Compiled image Paths
       
       loadImage(path){
-        return '/' + require('../../assets/images/' + path);
+        return require('../../assets/images/' + path);
       }
     }
 	};
