@@ -15,6 +15,7 @@ export const routes = [
   {
     path:'/auth',
     component: AuthComponent,
+    redirect: '/auth/login',
     children: [
       {
         path: "login",
