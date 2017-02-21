@@ -8,7 +8,9 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "lintcss": "stylelint '**/*.vue' --syntax scss",
     "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules",
-    "clean": "rm -r dist/"
+    "clean": "rm -r dist/",
+    "build-deploy": "npm run clean && npm run build && s3-website deploy",
+    "deploy": "s3-website deploy"
   },
   "dependencies": {
     "vue": "^2.1.0",

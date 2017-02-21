@@ -35,7 +35,7 @@
 
     methods: {
       loadImage(path){
-        return '/' + require('../../assets/images/' + path);
+        return require('../../assets/images/' + path);
       }
     }
 	};

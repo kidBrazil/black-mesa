@@ -67,7 +67,7 @@
 
     methods: {
       loadImage(path){
-        return '/' + require('../../assets/images/' + path);
+        return require('../../assets/images/' + path);
       },
       // Change Language METHOD
       change () {

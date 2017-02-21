@@ -38,7 +38,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '',
+    publicPath: '/',
     filename: 'app/[name][hash].js'
   },
   // Module Rules & Loaders
