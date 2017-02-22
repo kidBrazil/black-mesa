@@ -1,5 +1,4 @@
 // Import Parent Compontents
-import TestRoute from './components/parent-templates/test-route.vue';
 import homeMain from './components/parent-templates/home.vue';
 import AuthComponent from './components/auth/Authentication.vue';
 import LoginComponent from './components/auth/Login.vue';
@@ -28,12 +27,11 @@ export const routes = [
     ]
   },
   {
-    path: '/testroute/:id',
-    component: TestRoute
+    path: '/home1',
+    component: homeMain
   },
-  // Example with Url Argument
   {
-    path: '/testroute2/:id',
-    component: TestRoute
+    path: '/home2',
+    component: homeMain
   }
 ];

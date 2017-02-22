@@ -1,29 +1,6 @@
 <template>
-  <section class="rr-main-hero" :style="heroStyles" aria-role="presentation">
-    <!-- Hero Features Strip -->
-    <div class="rr-main-hero-features u-uppercase">
-      <div class="rr-main-wrapper flex flex-hor-between flex-vert-center">
-        <h3 class="rr-main-hero-heading"> Standard <br class="u-hidden-phone" /> Features </h3>
-        
-        <!-- Generate Items  -->
-        <a  href="#" 
-            :title="item.text" 
-            v-for="item in items"
-            aria-role="menuitem"
-            class="flex flex-hor-between flex-ver-center rr-hero-feature-detail">
-
-          <div class="rr-hero-feature-icon">
-            <img :src="loadImage(item.image)" :alt="item.text">
-          </div>
-          <div class="rr-hero-feature-desc flex flex-wrap flex-group-center">
-            <span class="h4">{{item.text}}</span>
-            <span class="h4">{{item.subtext}}</span>
-          </div>
-
-        </a>
-
-      </div>
-    </div>
+  <section class="mdev-main-hero" :style="heroStyles" aria-role="presentation">
+    <h1> App Under Construction </h1>
   </section>
 </template>
 
@@ -34,30 +11,8 @@
 	export default {
     data: function() {
       return{
-        items: [
-          { 
-            image: 'AIR_RIDE.png',
-            text: 'Air ride',
-            subtext:'cab & seat'
-          },
-          { 
-            image: 'GPS.png',
-            text: 'GPS',
-            subtext: 'Auto Steer'
-          },
-          {
-            image: 'CONTROLS.png',
-            text: 'Machine/touch',
-            subtext: 'screen controls'
-          },
-          {
-            image: 'FUEL.png',
-            text: 'Fuel',
-            subtext: 'efficiency'
-          }
-        ],
         heroStyles: {
-            backgroundImage: "url('" + this.loadImage('hero.jpg')  + "')",
+            backgroundColor: "#2f2f2f",
             backgroundSize: 'cover'
         }
       };
@@ -85,17 +40,28 @@
   /* Main Component Styles                */
   /*--------------------------------------*/
 
-  .rr-main-hero {
-    height: 89vh;
+  .mdev-main-hero {
+    height: 100vh;
     position: relative;
     background-position: -62% -80px;
 
     @media screen and ('$tablet-up-comp') {
       background-position: center -80px;
     }
+
+    h1{
+      width: 100%;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-transform: uppercase;
+      color: $white;
+      font-size: 3.2vw;
+    }
   }
 
-  .rr-main-hero-features {
+  .mdev-main-hero-features {
     width: 100%;
     background: $charcoal-grey;
     padding: 35px 0;
@@ -104,8 +70,8 @@
     color: $white;
   }
 
-  .rr-main-hero-heading,
-  .rr-hero-feature-detail {
+  .mdev-main-hero-heading,
+  .mdev-hero-feature-detail {
     width: 100%;
     text-shadow: 1px 1px 3px rgba(0,0,0,0);
     transition: all, .3s;
@@ -120,17 +86,17 @@
     }
   }
 
-  .rr-main-hero-heading {
+  .mdev-main-hero-heading {
     letter-spacing: 2px;
     line-height: 33px;
     margin-right: 30px;
   }
 
-  .rr-hero-feature-detail {
+  .mdev-hero-feature-detail {
     width: 50%;
   }
 
-  .rr-hero-feature-desc {
+  .mdev-hero-feature-desc {
     width: 70%;
 
     span {
@@ -140,7 +106,7 @@
     }
   }
 
-  .rr-hero-feature-icon {
+  .mdev-hero-feature-icon {
     width: 30%;
 
     img {
@@ -149,7 +115,7 @@
   }
 
   //Wrapper Hack for Flex
-  .rr-main-wrapper {
+  .mdev-main-wrapper {
     flex-wrap: wrap;
 
     @media screen and ('$tablet-up-comp') {
@@ -159,7 +125,7 @@
 
   // Escaped media query to avoid repetition
   @media screen and ('$phone-only-comp') {
-    .rr-main-hero-heading {
+    .mdev-main-hero-heading {
       text-align: center;
       margin-bottom: 30px;
       margin-right: 0;

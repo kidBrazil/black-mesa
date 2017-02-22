@@ -1,5 +1,5 @@
 <template>
- <div class="rr-main-wrapper">
+ <div class="mdev-main-wrapper">
     <div class="">
       <h2> Login </h2>
       <input type="text" placeholder="Username">
@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .rr-main-wrapper {
+  .mdev-main-wrapper {
     padding-top: 200px;
   }
 </style>
