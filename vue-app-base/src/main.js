@@ -1,5 +1,4 @@
-
-// [ Black-Mesa ] Project Entry --------------------------
+// [ Moreira Development ] Project Entry --------------------------
 // Author: Lucas Moreira - l.moreira@live.ca
 
 // [ Vue.js ] -------------------------------------------

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="rr-main-wrapper u-text-center">
+    <div class="mdev-main-wrapper u-text-center">
       <h1 style="margin: 20px 0;"> VUE LOADER TEST</h1>
       <label> Username </label>
       <!-- Input Bound via V-Model -->

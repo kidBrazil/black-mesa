@@ -1,14 +1,14 @@
 <template>
-  <nav class="rr-main-nav" aria-role="navigation" role="navigation">
-    <div class="rr-main-wrapper flex flex-nowrap flex-hor-between flex-vert-end">
-      <a :href="homeLink" :title="homeTitle" class="rr-main-nav-branding">
+  <nav class="mdev-main-nav" aria-role="navigation" role="navigation">
+    <div class="mdev-main-wrapper flex flex-nowrap flex-hor-between flex-vert-end">
+      <a :href="homeLink" :title="homeTitle" class="mdev-main-nav-branding">
         <img :src="loadImage(homeBrand)">
       </a>
-      <div class="rr-main-nav-links u-uppercase">
+      <div class="mdev-main-nav-links u-uppercase">
         <router-link 
           v-for="link in links" 
           :to="link.route" 
-          active-class="rr-active" 
+          active-class="--active" 
           :title="link.linkTitle" 
           aria-role="menuitem" 
           exact>
@@ -16,7 +16,9 @@
        </router-link> 
       </div>
     </div>
-    <button @click="change()">CHANGE FFS</button>
+    <!--
+    <button @click="change()">CHANGE</button>
+    -->
   </nav>
 </template>
 
@@ -30,25 +32,25 @@
         // Refer to routes.js file for available routes.
         links: [
           {
-            linkName: 'About',
-            linkTitle: 'About Us',
+            linkName: 'Link 1',
+            linkTitle: 'Link 1',
             route: '/'
           },
           {
-            linkName: 'Products',
-            linkTitle: 'Our Products',
-            route: '/testroute/98723123'
+            linkName: 'Link 2',
+            linkTitle: 'Link 2',
+            route: '/home1'
           },
           {
-            linkName: 'Contact',
-            linkTitle: 'Contact Us',
-            route: '/testroute2/88372198731'
+            linkName: 'Link 3',
+            linkTitle: 'Link 3',
+            route: '/home2'
           }
         ],
 
-        homeLink: 'http://red-rhino.com',
-        homeTitle: 'RedRhino',
-        homeBrand: 'ra-logo_icon.png'
+        homeLink: '#',
+        homeTitle: 'Home',
+        homeBrand: 'main-logo.png'
       };
     },
 
@@ -57,10 +59,10 @@
         var distanceTop = $(window).scrollTop();
 
         if(distanceTop >= 250) {
-          $('.rr-main-nav').addClass('rr-main-nav-visibility');
+          $('.mdev-main-nav').addClass('mdev-main-nav-visibility');
         }
         else {
-          $('.rr-main-nav').removeClass('rr-main-nav-visibility');
+          $('.mdev-main-nav').removeClass('mdev-main-nav-visibility');
         }
       });
     },
@@ -99,7 +101,7 @@
   /*--------------------------------------*/
   /* Main Component Styles                */
   /*--------------------------------------*/
-  .rr-main-nav {
+  .mdev-main-nav {
     width: 100%;
     position: fixed;
     top: 0;
@@ -109,7 +111,11 @@
     transition: all, .3s;
     background: rgba(51,51,51,0);
 
-    .rr-main-nav-branding {
+    img{
+      width: 100%;
+    }
+
+    .mdev-main-nav-branding {
       max-width: 83px;
       min-width: 73px;
       height: auto;
@@ -123,12 +129,12 @@
       }
     }
 
-    .rr-main-nav-links {
+    .mdev-main-nav-links {
       color: $white;
       font-weight: $heading-weight;
     }
 
-    .rr-main-nav-links a {
+    .mdev-main-nav-links a {
       margin: 0 10px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0);
       transition: all, .3s;
@@ -146,12 +152,12 @@
       }
     }
 
-    .rr-active {
+    .--active {
       color: $escavator-yellow;
     }
   }
 
-  .rr-main-nav-visibility {
+  .mdev-main-nav-visibility {
     background: rgba(51,51,51,.6);
 
     &:hover {
