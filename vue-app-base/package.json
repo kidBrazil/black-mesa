@@ -40,6 +40,7 @@
     "node-sass": "^4.1.1",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.1",
+    "robotstxt-webpack-plugin": "^1.0.1",
     "sass-loader": "^4.1.1",
     "stylelint": "^7.7.1",
     "stylelint-processor-html": "^1.0.0",
