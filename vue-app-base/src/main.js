@@ -12,6 +12,9 @@ import App from './App.vue';
 import { routes  } from './routes.js';
 import store from './store/store.js';
 
+// Import Auth Plugin
+import Auth from './plugins/auth.js';
+
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
@@ -26,6 +29,7 @@ const locales = {
 Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
 Vue.config.lang = 'en';
@@ -53,8 +57,17 @@ Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 // Set Global Intercept 
 Vue.http.interceptors.push( (request, next) => {
   console.log(request);
-  next(); 
+  // To use when defining a single API that is not firebase
+  //if (request.url[0] === '/'){
+  //  request.url = "https:apiurl:3030" + request.url;
+  //}
+  next( function(response){
+    if (response.status == 404){
+      alertify.error('Sorry, Our systems are not responding right now.');
+    }
+  }); 
 });
+
 //--------------------------------------[ vue-resource ]
 
 

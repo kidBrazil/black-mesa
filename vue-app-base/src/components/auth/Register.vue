@@ -2,12 +2,12 @@
   <div class="mdev-main-wrapper">
     <h2>Register</h2>
 
-    <input type="email" placeholder="Email" >
-    <input type="text" placeholder="Username" >
-    <input type="password" placeholder="Password" >
-    <button>Register</button>
+    <input v-model="user.email" type="email" placeholder="Email" >
+    <input v-model="user.firstname" type="text" placeholder="First name" >
+    <input v-model="user.lastname" type="text" placeholder="Last name" >
+    <input v-model="user.password" type="password" placeholder="Password" >
+    <button @click="register">Register</button>
     <hr>
-
     <p>
       Already have an account? <router-link to="/auth/login">Login! </router-link>
     </p>
@@ -16,12 +16,32 @@
 
 <script>
   export default {
-   name: "RegComponent" 
+   name: "RegComponent",
+
+   data: function(){
+    return{
+      user: {
+        email: "",
+        firstname: "",
+        lastname: "",
+        password: ""
+      }
+    };
+   },
+   methods: {
+    register: function() {
+      this.$http.post("/user.json", this.user)
+        .then(function(res){
+          alertify.success('You have Successfully Created a User.');
+          alertify.success('You will be redirected to Login shortly...');
+        }).done();
+      
+      console.log(this.user);
+    }
+   }
   };
 </script>
 
 <style lang="scss" scoped>
-  .mdev-main-wrapper {
-    padding-top: 200px;
-  }
+
 </style>
