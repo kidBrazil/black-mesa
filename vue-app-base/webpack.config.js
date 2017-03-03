@@ -22,6 +22,7 @@ const autoprefixer = require('autoprefixer')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 // Module Exports
 module.exports = {
@@ -135,6 +136,27 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/images/main-logo.png',
+      prefix: 'icons-[hash]/',
+      emitStats: false,
+      persistentCache: true,
+      inject: true,
+      background: '#2f2f2f',
+      title: '[ Black Mesa ]',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     })
   ],
   resolve: {
