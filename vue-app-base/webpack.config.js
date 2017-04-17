@@ -22,8 +22,7 @@ const autoprefixer = require('autoprefixer')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 // Module Exports
 module.exports = {
@@ -79,47 +78,34 @@ module.exports = {
       // Image Processing
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/images/[name].[ext]?[hash]'
-            }
-          },
-          // Image Compression
-          {
-            loader: 'image-webpack-loader',
-            query: {
+        loaders: [ 'file-loader?context=src/images&name=images/[path][name].[ext]', {
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
               progressive: true,
-              optimizationLevel: 9,
+              quality: 95
+            },
+            gifsicle: {
               interlaced: false,
-              // .png
-              pngquant: {
-                quality: '85-90',
-                speed: 4
-              },
-              // .jpg/jpeg
-              mozjpeg: {
-                quality: 90
-              },
-              // .svg
-              svgo: {
-                plugins: [
-                  {
-                    removeViewBox: false
-                  },
-                  {
-                    removeEmptyAttrs: false
-                  }
-                ]
-              },
-              gifsicle: {
-                interlaced: false,
-                optimizationLevel: 2
-              }
+              optimizationLevel: 2
+            },
+            pngquant: {
+              quality: '85-90',
+              speed: 4
+            },
+            svgo: {
+              plugins: [
+                {
+                  removeViewBox: false
+                },
+                {
+                  removeEmptyAttrs: false
+                }
+              ]
             }
           }
-        ]
+        
+        }]
       }
     ]
   },
@@ -139,13 +125,15 @@ module.exports = {
       name: 'vendor'
     }),
     new FaviconsWebpackPlugin({
-      logo: './src/assets/images/main-logo.png',
+      logo: './src/assets/images/favicon.png',
       prefix: 'icons-[hash]/',
       emitStats: false,
+      statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true,
-      background: '#2f2f2f',
-      title: '[ Black Mesa ]',
+      background: '#fff',
+      title: 'Zucora Work Order Portal',
+
       icons: {
         android: true,
         appleIcon: true,
@@ -204,24 +192,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new RobotstxtPlugin({
-      policy: [
-        {
-          userAgent: 'Googlebot',
-          allow: '/',
-          disallow: '/search',
-          crawDelay: 2
-        },
-        {
-          userAgent: '*',
-          allow: '/',
-          disallow: '/search',
-          crawDelay: 10
-        }
-      ],
-      sitemap: 'http://host.com/sitemap.xml',
-      host: 'http://host.com'
     })
   ])
 }
