@@ -1,4 +1,4 @@
-// BlackMesa - Vue Base App 
+// BlackMesa - Vue Base App
 // Webpack 2 Configuration file
 // -----------------------------------------
 // Lucas Moreira - l.moreira@live.ca
@@ -104,7 +104,7 @@ module.exports = {
               ]
             }
           }
-        
+
         }]
       }
     ]
@@ -167,7 +167,7 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   // Require Compression Plugin for Gzip
   const CompressionPlugin = require("compression-webpack-plugin");
-  
+
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
