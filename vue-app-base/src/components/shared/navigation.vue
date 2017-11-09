@@ -55,7 +55,12 @@
     },
 
     mounted: function(){
+        // Resize Timer
+        var resizeTimerNav = null;        
+        // Show Hide Nav
       $(document).scroll(function(event) {
+
+        // Distance Scrolled
         var distanceTop = $(window).scrollTop();
 
         if(distanceTop >= 250) {
@@ -65,6 +70,28 @@
           $('.mdev-main-nav').removeClass('mdev-main-nav-visibility');
         }
       });
+
+      // Give padding according to Nav Height IIFE
+      (function(){
+      
+        // Desired Padding Value
+        var desiredPadding = 60;
+        // Adjust Padding of the site
+        function adjustPadding() {
+          var navHeight = $('.mdev-main-nav')[0].getBoundingClientRect().height;
+        
+          $('#app').css({
+            "padding-top": desiredPadding + navHeight + 'px'
+          });
+        }
+        // Trigger with Debouce
+        $(window).resize(function(){
+          clearTimeout(resizeTimerNav);
+          resizeTimerNav = setTimeout(adjustPadding, 800);
+        }); 
+        // Adjust Padding on Load
+        adjustPadding();
+      })();
     },
 
     methods: {
