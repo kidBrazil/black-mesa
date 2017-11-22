@@ -10,7 +10,7 @@
       "severity": "warning",
       "message": "Please Use 2 Spaces Or Lucas Gets Grumpy"
     }],
-    "unit-whitelist": ["vw","vh", "px", "%", "s"],
+    "unit-whitelist": ["vw","vh", "px", "%", "s", "deg"],
     "font-weight-notation": "numeric",
     "number-leading-zero": ["never", {
       "message": "Leading Zeroes are redundant - please remove them."
