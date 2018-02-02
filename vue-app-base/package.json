@@ -13,6 +13,7 @@
     "deploy": "s3-website deploy"
   },
   "dependencies": {
+    "@moreira-development/sass-boilerplate": "^1.1.0",
     "vue": "^2.5.2",
     "vue-i18n": "^5.0.0",
     "vue-resource": "^1.0.3",

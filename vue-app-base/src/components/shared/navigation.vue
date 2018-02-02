@@ -5,15 +5,15 @@
         <img :src="loadImage(homeBrand)">
       </a>
       <div class="mdev-main-nav-links u-uppercase">
-        <router-link 
-          v-for="link in links" 
-          :to="link.route" 
-          active-class="--active" 
-          :title="link.linkTitle" 
-          aria-role="menuitem" 
+        <router-link
+          v-for="link in links"
+          :to="link.route"
+          active-class="--active"
+          :title="link.linkTitle"
+          aria-role="menuitem"
           exact>
             {{ link.linkName  }}
-       </router-link> 
+       </router-link>
       </div>
     </div>
     <!--
@@ -26,7 +26,7 @@
 
 <script>
   export default{
-    // <router-link> element is a custom element derived from vue-router. use :to - to bind. 
+    // <router-link> element is a custom element derived from vue-router. use :to - to bind.
     data: function(){
       return{
         // Refer to routes.js file for available routes.
@@ -56,7 +56,7 @@
 
     mounted: function(){
         // Resize Timer
-        var resizeTimerNav = null;        
+        var resizeTimerNav = null;
         // Show Hide Nav
       $(document).scroll(function(event) {
 
@@ -73,13 +73,13 @@
 
       // Give padding according to Nav Height IIFE
       (function(){
-      
+
         // Desired Padding Value
         var desiredPadding = 60;
         // Adjust Padding of the site
         function adjustPadding() {
           var navHeight = $('.mdev-main-nav')[0].getBoundingClientRect().height;
-        
+
           $('#app').css({
             "padding-top": desiredPadding + navHeight + 'px'
           });
@@ -88,7 +88,7 @@
         $(window).resize(function(){
           clearTimeout(resizeTimerNav);
           resizeTimerNav = setTimeout(adjustPadding, 800);
-        }); 
+        });
         // Adjust Padding on Load
         adjustPadding();
       })();
@@ -180,7 +180,7 @@
     }
 
     .--active {
-      color: $escavator-yellow;
+      color: $color-brand-primary;
     }
   }
 

@@ -20,7 +20,7 @@
 
     methods:{
       // Get Compiled image Paths
-      
+
       loadImage(path){
         return require('../../assets/images/' + path);
       }
@@ -63,7 +63,7 @@
 
   .mdev-main-hero-features {
     width: 100%;
-    background: $charcoal-grey;
+    background: #333;
     padding: 35px 0;
     position: absolute;
     bottom: 0;

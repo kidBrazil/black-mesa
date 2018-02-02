@@ -21,13 +21,13 @@
 /* Button Colors */
 
 .mdev-action-btn {
-  color: $charcoal-grey;
-  background: $escavator-yellow;
+  color: $color-brand-accent;
+  background: $color-brand-primary;
   border: 1px solid rgba(242,170,0,0);
 
   &:hover {
-    color: $escavator-yellow;
-    background: $charcoal-grey;
+    color: $color-brand-primary;
+    background: $color-brand-accent;
     border: 1px solid rgba(242,170,0,1);
   }
 }
