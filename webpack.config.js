@@ -24,17 +24,45 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
 }
 
 const isProd = function() {
-  return (process.env.NODE_ENV === 'production') ? true : false;
+  return (process.env.WEBPACK_MODE === 'production') ? true : false;
 }
 const buildingForLocal = () => {
-  return (NODE_ENV === 'development');
+  return (process.env.WEBPACK_MODE === 'development');
 };
+
+const robotOptions = {
+  policy: [
+    {
+      userAgent: "Googlebot",
+      allow: "/",
+      disallow: ["/search"],
+      crawlDelay: 2
+    },
+    {
+      userAgent: "OtherBot",
+      allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
+      disallow: ["/admin", "/login"],
+      crawlDelay: 2
+    },
+    {
+      userAgent: "*",
+      allow: "/",
+      disallow: "/search",
+      crawlDelay: 10,
+      cleanParam: "ref /articles/"
+    }
+    ],
+    sitemap: "http://example.com/sitemap.xml",
+    host: "http://example.com"
+}
 // Module Exports
 module.exports = {
   // Asset Splitting [ Vendor | Build ]
@@ -155,6 +183,7 @@ module.exports = {
   },
   // Plugins & Post Processing
   plugins: [
+    new CleanWebpackPlugin('dist', {} ),
     // Auto Prefix & Linting
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ]  } }),
     new VueLoaderPlugin(),
@@ -162,6 +191,7 @@ module.exports = {
       syntax: 'scss',
       files: ['**/*.vue']
     }),
+    new RobotstxtPlugin(robotOptions),
     // Text Extraction & Chunking
     new ExtractTextPlugin("assets/styles/styles[hash].css"),
     new HtmlWebpackPlugin({
@@ -208,7 +238,7 @@ module.exports = {
 }
 
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.WEBPACK_MODE === 'production') {
   // Require Compression Plugin for Gzip
   const CompressionPlugin = require("compression-webpack-plugin");
 
@@ -217,7 +247,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        WEBPACK_MODE: '"production"'
       }
     }),
     // Gzip Compression

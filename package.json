@@ -13,6 +13,7 @@
     "deploy": "s3-website deploy"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "sass-resources-loader": "^1.3.3",
     "vue": "^2.5.16"
   },
