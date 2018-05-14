@@ -114,15 +114,14 @@
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
-
   /* Disable because they are already linted */
   /* stylelint-disable */
-  @import '../../assets/styles/component-lean-main.scss';
+  @import '../../assets/styles/global-main.scss';
   /* stylelint-enable */
 
   /*--------------------------------------*/
@@ -157,18 +156,13 @@
     }
 
     .mdev-main-nav-links {
-      color: $white;
-      font-weight: $heading-weight;
+      color: $color-brand-primary;
     }
 
     .mdev-main-nav-links a {
       margin: 0 10px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0);
       transition: all, .3s;
-
-      @media screen and ('$tablet-up-comp') {
-        margin: 0 30px;
-      }
 
       &:hover {
         text-shadow: 1px 1px 3px rgba(0,0,0,.6);
@@ -179,9 +173,6 @@
       }
     }
 
-    .--active {
-      color: $color-brand-primary;
-    }
   }
 
   .mdev-main-nav-visibility {

@@ -11,10 +11,10 @@
 
 
 <script>
-  
+
   //Local Component registration
   import MainNavigation from './components/shared/navigation.vue';
-  
+
   export default{
 
     components: {
@@ -30,8 +30,7 @@
 /*-----/
 Global Main
 /-----*/
-@import './assets/styles/global-main.scss';
-
+//@import './assets/styles/global-main.scss';
 /*--------------------------------------*/
 /* Main Component Styles                */
 /*--------------------------------------*/

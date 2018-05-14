@@ -15,6 +15,8 @@ This document will cover a brief listing of the dependencies being used on this 
 * [vue-style-loader](https://github.com/vuejs/vue-style-loader "Vue Style Loader documentation")
 
 ## Dev Dependencies
+* [sass-boilerplate-lean](http://babeljs.io/docs/setup/ "Babel Documentation")
+
 * [Babel](http://babeljs.io/docs/setup/ "Babel Documentation")
 
 * [compression-webpack-plugin](https://github.com/webpack-contrib/compression-webpack-plugin "Webpack Compression documentation")
