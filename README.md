@@ -32,15 +32,11 @@ Lets face it, we all hate slow websites on mobile - so why would we build slow w
 
 ##:wrench:The Stack
 
-:small_red_triangle:Node.js 6.0+
-:small_red_triangle:Vue.JS 2.0+
+:small_red_triangle:Node.js 8.11.1+
+:small_red_triangle:Vue.JS 2.8+
 :small_red_triangle:Vue-X
 :small_red_triangle:Firebase
 :small_red_triangle:Webpack
 :small_red_triangle:SASS
 
 ---
-
-###Contact
-###Lucas U. Moreira
-###l.moreira@live.ca

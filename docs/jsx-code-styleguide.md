@@ -1,4 +1,4 @@
-# ES6 Coding Style
+# :eyeglasses:ES6 Coding Style
 
 This document is intended to provide consistent and helpful coding convention for ES6 code. It should be usable either in Node/IO.js or in the browser.
 
@@ -10,7 +10,7 @@ Instructions denoted as **must**/**must not** are *mandatory*. Instructions deno
 
 Rationale for each instruction is *italic*. Some instructions are under the *pure convention* rationale: it means that when several, practically equivalent (besides bikeshedding) options are available, we pick one and stick to it to enforce consistency in the codebase.
 
-## Evil constructs
+## :skull:Evil constructs
 
 - The following constructs **must not** be used, for both performance and critical security reasons.
 
@@ -825,7 +825,7 @@ class Foo extends Bar {
   }
 
   get _baz() { // private getter
-    ...  
+    ...
   }
 
   set _baz(val) { // private setter
@@ -833,7 +833,7 @@ class Foo extends Bar {
   }
 
   _doFoo() { // private method
-    ...  
+    ...
   }
 
   // If your transpiler or environment support ES7 class properties:
@@ -844,7 +844,7 @@ class Foo extends Bar {
   }
 
   static _doFoo() { // private static method
-    ...  
+    ...
   }
 }
 

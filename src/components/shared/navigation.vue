@@ -137,7 +137,7 @@
     transition: all, .3s;
     background: rgba(51,51,51,0);
 
-    img{
+    img {
       width: 100%;
     }
 
@@ -172,7 +172,6 @@
         margin-right: 0;
       }
     }
-
   }
 
   .mdev-main-nav-visibility {

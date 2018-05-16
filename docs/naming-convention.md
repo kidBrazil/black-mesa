@@ -1,4 +1,4 @@
-#Naming Convention
+# :memo:Naming Convention
 
 To ensure consistency across the application developers should strive to adhere to these naiming conventions at all times.
 
@@ -6,12 +6,12 @@ To ensure consistency across the application developers should strive to adhere 
 
 Files are to be saved with as descriptive and short a name as possible and comprised entirely of lower case characters separated by a '-'.
 
-### Do's
+### :heavy_check_mark:Do's
 .. main-logo.jpg
 .. automated-scroll-service.js
 .. dashboard-template.vue
 
-### Dont's
+### :heavy_multiplication_x:Dont's
 .. MainLogo.jpg
 .. Automated-Scrol-SERVICE.JS
 .. DashBoard-temPlate.vue

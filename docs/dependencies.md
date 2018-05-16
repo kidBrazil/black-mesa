@@ -3,7 +3,7 @@ This document will cover a brief listing of the dependencies being used on this 
 
 ---
 
-## Main Dependencies
+##:floppy_disk:Main Dependencies
 * [Node.js](https://nodejs.org/en/docs/ "Node Js documentation")
 
 * [Vue.js](https://vuejs.org/v2/api/ "Vue.JS documentation")
@@ -17,7 +17,7 @@ This document will cover a brief listing of the dependencies being used on this 
 * [sass-resources-loader](https://github.com/shakacode/sass-resources-loader
   "SASS Share Resources")
 
-## Dev Dependencies
+##:floppy_disk:Dev Dependencies
 * [sass-boilerplate-lean](https://github.com/MoreiraDevelopment/sass-boilerplate/tree/master/sass-boilerplate-lean "MDEV Sass Boilerplate")
 
 * [Babel](http://babeljs.io/docs/setup/ "Babel Documentation")

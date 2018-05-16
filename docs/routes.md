@@ -1,7 +1,7 @@
-#Routing [ SPA ] - vue-router
+# :steam_locomotive:Routing [ SPA ] - vue-router
 This document describes the routing scheme being used in this project. This is all based on the vue-router dependency and you can find more information on it on their [Documentation Page](https://github.com/vuejs/vue-router "vue-router Documentation").
 
-##Setup
+## Setup
 Router setup is simple. It requires a couple of configurations to be set on main.js
 
 Check out the vue router documentation on [History Mode](https://router.vuejs.org/en/essentials/history-mode.html "History Mode Server Setup")
@@ -86,7 +86,7 @@ const UserEdit = resolve => {
 };
 // Export Constant...
 export const routes =[
-  
+
   // Route...
   {
     path: '', component: Home
@@ -105,7 +105,7 @@ export const routes =[
         //Prevent routing..
         next(false);
       }
-      
+
     }
   },
   // Child Routes...
@@ -129,7 +129,7 @@ export const routes =[
         path: *,
         redirect: '/'
       }
-    
+
     ]}
   },
 ];
@@ -138,10 +138,10 @@ export const routes =[
 <router-link
   tag="button"
   //to bound to named route.
-  :to="{ 
-    name: 'userEdit', 
-    params: { id: $route.params.id  }, 
-    query: { 
+  :to="{
+    name: 'userEdit',
+    params: { id: $route.params.id  },
+    query: {
       locale: 'en',
       q: 100
     },

@@ -1,12 +1,12 @@
-#Vue Resource - AJAX Wrapper
+# Vue Resource - AJAX Wrapper
 ---
 Vue resource allows us to make asynchronous AJAX requests to any API quickly and easily. For more information specific to vue-resource please visit their official [documentation](https://github.com/pagekit/vue-resource/tree/master/docs "Vue-Resource Documentation").
 
-##Setup 
+## Setup
 The setup for vue-resource is actually quite simple and simply requires VueResource to be imported into *main.js*
 
 
-##Configuration
+## Configuration
 There are several configuration options available for vue-resource and you can find more information in the official [documentation](https://github.com/pagekit/vue-resource/tree/master/docs "Vue-Resource Documentation").
 
 ```javascript
@@ -18,20 +18,20 @@ import VueResource from 'vue-resource';
 // Tell Vue to use vue-resource..
 Vue.use(VueResource);
 
-// Set Global Root Path 
+// Set Global Root Path
 // point it to project DB main project API
 
 Vue.http.options.root = 'http://some-resource.io';
 ```
 
-#Common Usage
+# Common Usage
 
-##Standard *POST* Request
+## Standard *POST* Request
 
 ```javascript
 //my-component.vue
 
-// $http == vue-resource 
+// $http == vue-resource
 // Post Request Sample ( Ajax )
 // Utilizing Global root Path set in Main.js
 // Interpolates to -- ('http://some-resource.io/data.json')
@@ -51,7 +51,7 @@ postData() {
 }
 ```
 
-##Standard *GET* Request
+## Standard *GET* Request
 
 ```javascript
 //my-component.vue
@@ -75,8 +75,8 @@ fetchData() {
     .then( data => {
       // Generate Array From Returned Object
       // Firebase is OODB so it will return .json Objects
-      
-      // Initialize Empty array 
+
+      // Initialize Empty array
       const resultArray = [];
       // loop through Data keys
       for (let key in data) {
@@ -89,7 +89,7 @@ fetchData() {
 },
 ```
 
-#Default Actions & Custom Actions
+# Default Actions & Custom Actions
 vue-resource ships with a few baked in default actions that you can use such as .save({..options..}, data). Which provide you with quick shorthand ways of making POST requests. Please check the documentation for more.
 
 [Using URI Template Syntax](http://medialize.github.io/URI.js/uri-template.html "URI Syntax")
@@ -110,19 +110,19 @@ export default {
       resource: {}
     };
   },
-  
+
   // Methods...
   methods: {
     // Default Action - Save [POST]
     this.resource.save( {..params..}, this.data );
-    
-    // Custom Action 
+
+    // Custom Action
     this.resource.saveCustom( this.data  )
 
     // Dynamic Fetch.
     fetchDataDynamic() {
       // Dynamic data fetch using dynamic data resource
-      // getData is a customAction that pipes the data 
+      // getData is a customAction that pipes the data
       this.resource.getData( { node: this.node } )
         .then ( response =>  {
           return response.json();
@@ -162,7 +162,7 @@ export default {
 }
 ```
 
-#Interceptors
+# Interceptors
 Interceptors allow for rules to be created so requests coming in and out of the application can be modified or logged. This might now always be necessary but provides a great level of flexibility when creating an app.
 
 ```javascript

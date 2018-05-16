@@ -1,4 +1,4 @@
-#SCSS Styleguide
+# :art:SCSS Styleguide
 
 ## What is it?
 A series of helpful guidelines to ensure consistency across all of the code produced by Moreira Development and it's developers. The styleguide will cover things such as naming conventions ( which will cross over with SCSS ), spacing, white-space and more. Please follow these guidelines while producing code to ensure that all the code we produce is uniform.

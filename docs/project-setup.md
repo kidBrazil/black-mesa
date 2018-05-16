@@ -1,13 +1,13 @@
-#:electric_plug:Project Setup 
+# :electric_plug:Project Setup
 
 This document provides step-by-step instructions on how to setup and run the project on your local development machine.
 
 
-##Install Node.js & NPM
+## :computer:Install Node.js & NPM
 
 This project has as it's main dependency a Node server architecture so it must be installed on your development machine before we proceed with the provided setup script.
 
-###Mac OSX
+### Mac OSX
 
 1. [Install xCode](http://developer.apple.com/technologies/tools/)
 2. [Install git](http://help.github.com/mac-git-installation/)
@@ -25,7 +25,7 @@ brew install node
 
 ```
 
-###Debian
+### Debian
 
 1.Install Node:
 
@@ -37,7 +37,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
 sudo apt-get install -y nodejs
 ```
 
-###Windows
+### Windows
 
 Install [Chocolatey](http://chocolatey.org/install) by opening a Admin Power Level Shell and running:
 
@@ -51,7 +51,7 @@ Install Node via Chocolatey by running on the same prompt:
 cinst nodejs.install
 ```
 
-###Other OS
+### Other OS
 
 Please visit the (Node.Js)[http://nodejs.org] official website for guides on installing node on your particular OS.
 
@@ -65,5 +65,3 @@ Now all you have to do is run the installation script. It will install all of th
 //Execute Bash Script
 ./setup/dev-environment.sh
 ```
-
-### Welcome Aboard!
