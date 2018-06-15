@@ -66,8 +66,8 @@ module.exports = merge(common, {
       sourceMap: true
     }),
     new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
+      cssProcessor: require('cssnano')({ autoprefixer: false }),
+      cssProcessorOptions: { discardComments: { removeAll: true,}, reduceIdents: false, discardDuplicates: false, autoprefixer: false },
       canPrint: true
     }),
     // Process and Inject Favicon
