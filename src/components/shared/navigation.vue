@@ -25,90 +25,90 @@
 
 
 <script>
-  export default{
-    // <router-link> element is a custom element derived from vue-router. use :to - to bind.
-    data: function(){
-      return{
-        // Refer to routes.js file for available routes.
-        links: [
-          {
-            linkName: 'Link 1',
-            linkTitle: 'Link 1',
-            route: '/'
-          },
-          {
-            linkName: 'Link 2',
-            linkTitle: 'Link 2',
-            route: '/home1'
-          },
-          {
-            linkName: 'Link 3',
-            linkTitle: 'Link 3',
-            route: '/home2'
-          }
-        ],
-
-        homeLink: '#',
-        homeTitle: 'Home',
-        homeBrand: 'main-logo.png'
-      };
-    },
-
-    mounted: function(){
-        // Resize Timer
-        var resizeTimerNav = null;
-        // Show Hide Nav
-      $(document).scroll(function(event) {
-
-        // Distance Scrolled
-        var distanceTop = $(window).scrollTop();
-
-        if(distanceTop >= 250) {
-          $('.mdev-main-nav').addClass('mdev-main-nav-visibility');
+export default{
+  // <router-link> element is a custom element derived from vue-router. use :to - to bind.
+  data: function(){
+    return{
+      // Refer to routes.js file for available routes.
+      links: [
+        {
+          linkName: 'Link 1',
+          linkTitle: 'Link 1',
+          route: '/'
+        },
+        {
+          linkName: 'Link 2',
+          linkTitle: 'Link 2',
+          route: '/home1'
+        },
+        {
+          linkName: 'Link 3',
+          linkTitle: 'Link 3',
+          route: '/home2'
         }
-        else {
-          $('.mdev-main-nav').removeClass('mdev-main-nav-visibility');
-        }
-      });
+      ],
 
-      // Give padding according to Nav Height IIFE
-      (function(){
+      homeLink: '#',
+      homeTitle: 'Home',
+      homeBrand: 'main-logo.png'
+    };
+  },
 
-        // Desired Padding Value
-        var desiredPadding = 60;
-        // Adjust Padding of the site
-        function adjustPadding() {
-          var navHeight = $('.mdev-main-nav')[0].getBoundingClientRect().height;
+  mounted: function(){
+      // Resize Timer
+      var resizeTimerNav = null;
+      // Show Hide Nav
+    $(document).scroll(function(event) {
 
-          $('#app').css({
-            "padding-top": desiredPadding + navHeight + 'px'
-          });
-        }
-        // Trigger with Debouce
-        $(window).resize(function(){
-          clearTimeout(resizeTimerNav);
-          resizeTimerNav = setTimeout(adjustPadding, 800);
+      // Distance Scrolled
+      var distanceTop = $(window).scrollTop();
+
+      if(distanceTop >= 250) {
+        $('.mdev-main-nav').addClass('mdev-main-nav-visibility');
+      }
+      else {
+        $('.mdev-main-nav').removeClass('mdev-main-nav-visibility');
+      }
+    });
+
+    // Give padding according to Nav Height IIFE
+    (function(){
+
+      // Desired Padding Value
+      var desiredPadding = 60;
+      // Adjust Padding of the site
+      function adjustPadding() {
+        var navHeight = $('.mdev-main-nav')[0].getBoundingClientRect().height;
+
+        $('#app').css({
+          "padding-top": desiredPadding + navHeight + 'px'
         });
-        // Adjust Padding on Load
-        adjustPadding();
-      })();
-    },
+      }
+      // Trigger with Debouce
+      $(window).resize(function(){
+        clearTimeout(resizeTimerNav);
+        resizeTimerNav = setTimeout(adjustPadding, 800);
+      });
+      // Adjust Padding on Load
+      adjustPadding();
+    })();
+  },
 
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
-      // Change Language METHOD
-      change () {
-        let current = this.$locale.current();
-        if (current === 'en') {
-          this.$locale.change('pt');
-        } else {
-          this.$locale.change('en');
-        }
+  methods: {
+    loadImage(path){
+      return require('../../assets/images/' + path);
+    },
+    // Change Language METHOD
+    change () {
+      let current = this.$locale.current();
+      if (current === 'en') {
+        this.$locale.change('pt');
+      } else {
+        this.$locale.change('en');
       }
     }
-  };
+  }
+};
 
 </script>
 
@@ -116,72 +116,72 @@
 
 <style lang="scss">
 
-  /*--------------------------------------*/
-  /* Lean Import for Components           */
-  /*--------------------------------------*/
-  /* Disable because they are already linted */
-  /* stylelint-disable */
-  @import '../../assets/styles/global-main.scss';
-  /* stylelint-enable */
+/*--------------------------------------*/
+/* Lean Import for Components           */
+/*--------------------------------------*/
+/* Disable because they are already linted */
+/* stylelint-disable */
+@import '../../assets/styles/global-main.scss';
+/* stylelint-enable */
 
-  /*--------------------------------------*/
-  /* Main Component Styles                */
-  /*--------------------------------------*/
-  .mdev-main-nav {
+/*--------------------------------------*/
+/* Main Component Styles                */
+/*--------------------------------------*/
+.mdev-main-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 35px 0;
+  z-index: 10;
+  transition: all, .3s;
+  background: rgba(51,51,51,0);
+
+  img {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 35px 0;
-    z-index: 10;
-    transition: all, .3s;
-    background: rgba(51,51,51,0);
-
-    img {
-      width: 100%;
-    }
-
-    .mdev-main-nav-branding {
-      max-width: 83px;
-      min-width: 73px;
-      height: auto;
-      width: 10%;
-      opacity: 1;
-      transition: all, .3s;
-
-      &:hover {
-        cursor: pointer;
-        opacity: .8;
-      }
-    }
-
-    .mdev-main-nav-links {
-      color: $color-brand-primary;
-    }
-
-    .mdev-main-nav-links a {
-      margin: 0 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0);
-      transition: all, .3s;
-
-      &:hover {
-        text-shadow: 1px 1px 3px rgba(0,0,0,.6);
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
   }
 
-  .mdev-main-nav-visibility {
-    background: rgba(51,51,51,.6);
+  .mdev-main-nav-branding {
+    max-width: 83px;
+    min-width: 73px;
+    height: auto;
+    width: 10%;
+    opacity: 1;
+    transition: all, .3s;
 
     &:hover {
-      background: rgba(51,51,51,.9);
+      cursor: pointer;
+      opacity: .8;
     }
   }
 
-  /*--------------------------------------*/
+  .mdev-main-nav-links {
+    color: $color-brand-primary;
+  }
+
+  .mdev-main-nav-links a {
+    margin: 0 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0);
+    transition: all, .3s;
+
+    &:hover {
+      text-shadow: 1px 1px 3px rgba(0,0,0,.6);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.mdev-main-nav-visibility {
+  background: rgba(51,51,51,.6);
+
+  &:hover {
+    background: rgba(51,51,51,.9);
+  }
+}
+
+/*--------------------------------------*/
 
 </style>

@@ -9,31 +9,31 @@
         Don't have an account? <router-link to="/auth/register"> Sign Up! </router-link>
       </p>
     </div>
- </div> 
+ </div>
 </template>
 
 <script>
-  export default {
-   name: "RegisterComponent",
+export default {
+ name: "RegisterComponent",
 
-   data: function() {
-    return{
-      user:{
-        email: ""
-      }
-    };
-   },
-
-   methods: {
-    register: function() {
-      this.$http.post("user.json", this.user)
-        .then(function(res){
-          alertify.success('You have Successfully Reset your Password');
-        });
-      console.log(this.user);
+ data: function() {
+  return{
+    user:{
+      email: ""
     }
-   }
   };
+ },
+
+ methods: {
+  register: function() {
+    this.$http.post("user.json", this.user)
+      .then(function(res){
+        alertify.success('You have Successfully Reset your Password');
+      });
+    console.log(this.user);
+  }
+ }
+};
 </script>
 
 <style lang="scss" scoped>

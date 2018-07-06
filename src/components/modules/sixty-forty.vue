@@ -6,21 +6,21 @@
 
 <script>
 
-	export default {
-	};
+export default {
+};
 
 </script>
 
 <style lang="scss" scoped>
 
-  /*--------------------------------------*/
-  /* Lean Import for Components           */
-  /*--------------------------------------*/
-  @import '../../assets/styles/component-lean-main.scss';
+/*--------------------------------------*/
+/* Lean Import for Components           */
+/*--------------------------------------*/
+@import '../../assets/styles/component-lean-main.scss';
 
-  /*--------------------------------------*/
-  /* Main Component Styles                */
-  /*--------------------------------------*/
-  /*--------------------------------------*/
+/*--------------------------------------*/
+/* Main Component Styles                */
+/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

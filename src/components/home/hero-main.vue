@@ -6,35 +6,35 @@
 
 <script>
 
-	export default {
-    name: 'MainHero',
-    data: function() {
-      return{
-        heroStyles: {
-            backgroundColor: "#2f2f2f",
-            backgroundSize: 'cover'
-        }
-      };
-    },
-
-    methods:{
-      // Get Compiled image Paths
-
-      loadImage(path){
-        return require('../../assets/images/' + path);
+export default {
+  name: 'MainHero',
+  data: function() {
+    return{
+      heroStyles: {
+          backgroundColor: "#2f2f2f",
+          backgroundSize: 'cover'
       }
+    };
+  },
+
+  methods:{
+    // Get Compiled image Paths
+
+    loadImage(path){
+      return require('../../assets/images/' + path);
     }
-	};
+  }
+};
 
 </script>
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* HERO MAIN Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* HERO MAIN Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

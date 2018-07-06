@@ -3,10 +3,10 @@
 </template>
 
 <script>
-  export default {
-   name: "ServicesView",
-   mounted: function() {console.log('Services Container');}
-  };
+export default {
+ name: "ServicesView",
+ mounted: function() {console.log('Services Container');}
+};
 </script>
 
 <style lang="scss">

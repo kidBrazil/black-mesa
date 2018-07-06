@@ -8,44 +8,44 @@
 
 
 <script>
-  export default{
-    name: 'Contact',
-    data: function(){
-      return{
+export default{
+  name: 'Contact',
+  data: function(){
+    return{
 
-      };
+    };
+  },
+
+  mounted: function(){
+    console.log('Element Mounted');
+  },
+
+  methods: {
+    loadImage(path){
+      return require('../../assets/images/' + path);
     },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    },
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
-      // Change Language METHOD
-      change () {
-        let current = this.$locale.current();
-        if (current === 'en') {
-          this.$locale.change('pt');
-        } else {
-          this.$locale.change('en');
-        }
+    // Change Language METHOD
+    change () {
+      let current = this.$locale.current();
+      if (current === 'en') {
+        this.$locale.change('pt');
+      } else {
+        this.$locale.change('en');
       }
     }
-  };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* CONTACT Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* CONTACT Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>
