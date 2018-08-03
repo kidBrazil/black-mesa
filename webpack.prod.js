@@ -66,7 +66,7 @@ module.exports = merge(common, {
       sourceMap: true
     }),
     new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano')({ autoprefixer: false }),
+      cssProcessor: require('cssnano'),
       cssProcessorOptions: { discardComments: { removeAll: true,}, reduceIdents: false, discardDuplicates: false, autoprefixer: false },
       canPrint: true
     }),

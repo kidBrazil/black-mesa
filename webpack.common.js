@@ -25,8 +25,7 @@ module.exports = {
       'vue',
       'vue-i18n',
       'vue-resource',
-      'vue-router',
-      'vuex'
+      'vue-router'
     ]
   },
   // Output Files
@@ -117,7 +116,7 @@ module.exports = {
             // JPEG Processing
             mozjpeg: {
               progressive: true,
-              quality: 95
+              quality: 90
             },
             // GIF Processing
             gifsicle: {
@@ -126,8 +125,8 @@ module.exports = {
             },
             // PNG Processing
             pngquant: {
-              quality: '85-90',
-              speed: 4
+              quality: '75-80',
+              speed: 2
             },
             // SVG Processing
             svgo: {

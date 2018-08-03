@@ -1,6 +1,6 @@
 {
-  "name": "black-mesa",
-  "description": "MDEV Boilerplate | Webpack 4 + Vue + SASS + Linting",
+  "name": "mdev-digital-website",
+  "description": "MDEV DIGITAL | We are a hybrid agency specializing in custom software development, branding and marketing",
   "version": "1.0.0",
   "author": "Lucas Moreira <l.moreira@Live.ca>",
   "private": true,
@@ -15,11 +15,13 @@
   },
   "dependencies": {
     "clean-webpack-plugin": "^0.1.19",
+    "s3-website": "^3.3.0",
     "sass-resources-loader": "^1.3.3",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-in-viewport-directive": "^1.1.4"
   },
   "devDependencies": {
-    "@moreira-development/sass-boilerplate-lean": "^1.0.0",
+    "@moreira-development/sass-boilerplate-lean": "^1.0.5",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -35,16 +37,16 @@
     "favicons-webpack-plugin": "0.0.9",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^4.2.0",
+    "image-webpack-loader": "^4.3.1",
     "json-loader": "^0.5.7",
-    "node-sass": "^4.9.0",
-    "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.5",
     "robotstxt-webpack-plugin": "^4.0.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
-    "stylelint": "^9.2.0",
+    "stylelint": "^9.4.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.4",
     "uglifyjs-webpack-plugin": "^1.2.5",
@@ -56,9 +58,9 @@
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "vuex": "^3.0.1",
-    "webpack": "^4.8.3",
+    "webpack": "^4.16.4",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-dev-server": "^3.1.5",
     "webpack-merge": "^4.1.2"
   }
 }
