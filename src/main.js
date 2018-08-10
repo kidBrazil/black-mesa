@@ -11,6 +11,14 @@ import App from './App.vue';
 // Import Routes & Central Stores
 import { routes  } from './routes.js';
 import store from './store/store.js';
+//
+// To see an example, check buttons.css and the btn-primary.vue element
+import inViewportDirective from 'vue-in-viewport-directive';
+Vue.directive('in-viewport', inViewportDirective);
+
+// Check View Directive
+import checkView from 'vue-check-view';
+Vue.use(checkView);
 
 // Import Auth Plugin
 import Auth from './plugins/auth.js';
@@ -54,7 +62,7 @@ Object.keys(locales).forEach(function (lang) {
 // Set Global Root path
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
-// Set Global Intercept 
+// Set Global Intercept
 Vue.http.interceptors.push( (request, next) => {
   console.log(request);
   // To use when defining a single API that is not firebase
@@ -65,7 +73,7 @@ Vue.http.interceptors.push( (request, next) => {
     if (response.status == 404){
       alertify.error('Sorry, Our systems are not responding right now.');
     }
-  }); 
+  });
 });
 
 //--------------------------------------[ vue-resource ]
@@ -93,6 +101,26 @@ const router = new VueRouter ({
   }
 });
 //--------------------------------------[ vue-router ]
+
+// [ Global Mixins ] --------------------------------
+Vue.mixin({
+  methods: {
+    loadImage(path){
+      return require('./assets/images/' + path);
+    },
+    // Change Language METHOD
+    change () {
+      let current = this.$locale.current();
+      if (current === 'en') {
+        this.$locale.change('pt');
+      } else {
+        this.$locale.change('en');
+      }
+    }
+  }
+})
+
+
 
 // [ Main Vue Instance ] ----------------------------
 new Vue({
