@@ -121,7 +121,7 @@ export default{
 /*--------------------------------------*/
 /* Disable because they are already linted */
 /* stylelint-disable */
-@import '../../assets/styles/global-main.scss';
+//@import '../../assets/styles/global-main.scss';
 /* stylelint-enable */
 
 /*--------------------------------------*/
