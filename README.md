@@ -1,4 +1,4 @@
-![MDEV Digital](https://mdev.digital/images/_/assets/images/MoreiraDevelopment.svg)
+![MDEV Digital](https://mdev.digital/social/githubLogo.svg)
 #[ Black Mesa ] :8ball:
 ---
 
