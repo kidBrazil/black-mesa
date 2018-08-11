@@ -1,5 +1,22 @@
 <template>
-    <h1> Main Footer </h1>
+    <div>
+      <h2> Welcome To MDEV Boilerplate </h2>
+      <a class="mdev-boilerlink" href="https://github.com/MdevDigitalInc/black-mesa" title="Documentation">
+        Boilerplate Documentation
+      </a>
+      <a class="mdev-boilerlink" href="https://github.com/MdevDigitalInc/sass-boilerplate" title="Documentation">
+        SASS Boilerplate Documentation
+      </a>
+      <a class="mdev-boilerlink" href="https://vuejs.org/v2/guide/" title="Documentation">
+        Vue Documentation
+      </a>
+      <a class="mdev-boilerlink" href="https://github.com/vuejs/awesome-vue" title="Documentation">
+        Vue Resources, Plugins & More
+      </a>
+      <a class="mdev-boilerlink" href="https://webpack.js.org/concepts/" title="Documentation">
+        Webpack Documentation
+      </a>
+    </div>
 </template>
 
 
@@ -41,7 +58,11 @@ export default{
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
-
+.mdev-boilerlink {
+  color: $color-brand-primary;
+  margin-top: 10px;
+  display: block;
+}
 
 /*--------------------------------------*/
 

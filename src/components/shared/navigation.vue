@@ -39,12 +39,12 @@ export default{
         {
           linkName: 'Link 2',
           linkTitle: 'Link 2',
-          route: '/home1'
+          route: '/about'
         },
         {
           linkName: 'Link 3',
           linkTitle: 'Link 3',
-          route: '/home2'
+          route: '/auth'
         }
       ],
 

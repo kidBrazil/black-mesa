@@ -1,0 +1,39 @@
+// Decorations
+
+.mdev-sexy-line {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  z-index: -1;
+
+  @media #{$portrait} {
+    width: 300%;
+    left: -100%;
+  }
+  @media #{$phone-only} {
+    width: 900%;
+    left: -400%;
+  }
+}
+
+.--sexy-green {
+  background: $color-brand-primary;
+  opacity: .5;
+
+  @media #{$portrait} {
+    opacity: .25;
+  }
+}
+
+.mdev-box-dec {
+  position: absolute;
+  z-index: 1;
+  background: $color-brand-primary;
+}
+
+.mdev-frame-dec {
+  position: absolute;
+  z-index: 1;
+  background: transparent;
+  border: 4px solid $color-brand-accent;
+}

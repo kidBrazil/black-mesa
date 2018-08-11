@@ -8,6 +8,10 @@
   text-transform: uppercase;
 }
 
+.u-lowercase {
+  text-transform: lowercase;
+}
+
 .u-capitalize {
   text-transform: capitalize;
 }
@@ -43,6 +47,22 @@
 .u-bold {
   font-weight: 700;
 }
+
+.u-black {
+  font-weight: 900;
+}
+
+.u-ultralight {
+  font-weight: 100;
+}
+
+.u-light {
+  font-weight: 300;
+}
+
+.u-italic {
+  font-style: italic;
+}
 /* Disabling because of !important */
 /* stylelint-disable */
 .u-hidden-phone {
@@ -64,6 +84,21 @@
   }
 }
 
+.u-screenreader {
+  width: 0!important;
+  height: 0!important;
+  transform: scaley(0);
+  opacity: 0!important;
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden!important;
+}
+
+
+.u-transparent {
+  opacity: 0 !important;
+}
 /* stylelint-enable */
 
 .u-hidden {
@@ -81,4 +116,30 @@
 
 .clear {
   @include clearfix();
+}
+
+.u-no-select {
+  user-select: none;
+}
+
+// Color Utilities
+.u-c-black {
+  color: $color-brand-bkg;
+}
+
+.u-c-accent {
+  color: $color-brand-accent;
+}
+
+.u-c-primary {
+  color: $color-brand-primary;
+}
+
+.u-c-white {
+  color: $white;
+}
+
+// Body Utilities
+.--body-white {
+  background: $white;
 }

@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> ABOUT </h1>
+    <h1> Base Template</h1>
   </section>
 </template>
 
@@ -9,11 +9,15 @@
 
 <script>
 export default{
-  name: 'About',
+  name: 'BaseTemplate',
   data: function(){
     return{
 
     };
+  },
+
+  mounted: function(){
+    console.log('COMPONENT NAME Mounted');
   }
 };
 </script>
@@ -23,7 +27,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* ABOUT Component Styles
+/* BASE TEMPLATE Component Styles
 /--------------------------------------*/
 
 

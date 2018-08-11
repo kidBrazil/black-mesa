@@ -2,7 +2,7 @@
 
 	[Global Main Stylesheet] - V 0.0.1
 	Created On: Dec - 28 - 2016 - Ubuntu 16.04
-	Updated On: May - 14 - 2018 - Ubuntu 17.10
+	Updated On: Aug - 10 - 2018 - Ubuntu 18.04
 
 	Desc: Main stylesheet comprises the
 	imports necessary to style the website
@@ -31,6 +31,11 @@
 @import './variables.scss';
 
 /*----
+  Mixins
+-----*/
+@import './mixins.scss';
+
+/*----
 	Global Typography
 -----*/
 @import './typography.scss';
@@ -54,6 +59,16 @@
   Buttons
 -----*/
 @import './buttons.scss';
+
+/*----
+  Decorations
+-----*/
+@import './decorations.scss';
+
+/*----
+  Animations
+-----*/
+@import './animations.scss';
 
 /*----
   Forms

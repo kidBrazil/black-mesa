@@ -1,5 +1,7 @@
 <template>
-  <h1>HERO HEADER</h1>
+  <div class="mdev-image">
+    <img :src="loadImage(homeBrand)">
+  </div>
 </template>
 
 
@@ -10,10 +12,7 @@ export default {
   name: 'MainHero',
   data: function() {
     return{
-      heroStyles: {
-          backgroundColor: "#2f2f2f",
-          backgroundSize: 'cover'
-      }
+      homeBrand: 'main-logo.png'
     };
   },
 
@@ -33,7 +32,14 @@ export default {
 /*-------------------------------------*/
 /* HERO MAIN Component Styles
 /--------------------------------------*/
+.mdev-image {
+  width: 20%;
+  margin: 30px auto;
 
+  img {
+    width: 100%;
+  }
+}
 
 /*--------------------------------------*/
 
