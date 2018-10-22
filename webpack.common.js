@@ -65,6 +65,11 @@ module.exports = {
           }
         }
       },
+      // Pug Loader
+      {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
+      },
       // JS Processing & Transpiling
       {
         test: /\.js$/,
