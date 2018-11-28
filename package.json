@@ -6,10 +6,10 @@
   "private": true,
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "lintcss": "stylelint '**/*.vue' --syntax scss",
+    "dev": "npm run lintcss && webpack-dev-server --open --config webpack.dev.js",
+    "lintcss": "stylelint '**/*.scss' --syntax scss",
     "prod": "webpack --config webpack.prod.js",
-    "build": "npm run lintcss && npm run lintvue && npm run prod",
+    "build": "npm run lintcss && npm run prod",
     "clean": "rm -r dist/",
     "build-deploy": "npm run clean && npm run build && s3-website deploy",
     "deploy": "s3-website deploy"
