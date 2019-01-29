@@ -1,8 +1,7 @@
-<template>
-  <section class="mdev-main-content u-text-center">
-    <hero-main></hero-main>
-    <main-footer></main-footer>
-  </section>
+<template lang="pug">
+  section.mdev-main-content.u-text-center
+    hero-main
+    main-footer
 </template>
 
 

@@ -1,7 +1,7 @@
-<template>
-  <section class="mdev-main-content">
-    <h1> 404 Page Of Doom </h1>
-  </section>
+<template lang="pug">
+  section.mdev-main-content
+    h1
+      |404 Page Of Doom
 </template>
 
 

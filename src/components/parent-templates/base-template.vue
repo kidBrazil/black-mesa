@@ -1,7 +1,7 @@
-<template>
-  <section class="mdev-main-content">
-    <h1> Base Template</h1>
-  </section>
+<template lang="pug">
+  section.mdev-main-content
+    h1
+      |Base Template
 </template>
 
 

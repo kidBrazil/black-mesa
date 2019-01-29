@@ -1,7 +1,6 @@
-<template>
-  <div class="mdev-image">
-    <img :src="loadImage(homeBrand)">
-  </div>
+<template lang="pug">
+  .mdev-image
+    img(:src="loadImage(homeBrand)")
 </template>
 
 

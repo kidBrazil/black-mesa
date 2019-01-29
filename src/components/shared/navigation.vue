@@ -1,25 +1,18 @@
-<template>
-  <nav class="mdev-main-nav" aria-role="navigation" role="navigation">
-    <div class="mdev-main-wrapper flex flex-nowrap flex-hor-between flex-vert-end">
-      <a :href="homeLink" :title="homeTitle" class="mdev-main-nav-branding">
-        <img :src="loadImage(homeBrand)">
-      </a>
-      <div class="mdev-main-nav-links u-uppercase">
-        <router-link
+<template lang="pug">
+  nav.mdev-main-nav(aria-role="navigation" role="navigation")
+    .mdev-main-wrapper.flex.flex-nowrap.flex-hor-between.flex-vert-end
+      a(:href="homeLink" :title="homeTitle" class="mdev-main-nav-branding")
+        img(:src="loadImage(homeBrand)")
+      .mdev-main-nav-links.u-uppercase
+        router-link(
           v-for="link in links"
           :to="link.route"
           active-class="--active"
           :title="link.linkTitle"
           aria-role="menuitem"
-          exact>
-            {{ link.linkName  }}
-       </router-link>
-      </div>
-    </div>
-    <!--
-    <button @click="change()">CHANGE</button>
-    -->
-  </nav>
+          exact)
+            |{{ link.linkName  }}
+    //button(@click="change()")CHANGE
 </template>
 
 

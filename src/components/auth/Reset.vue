@@ -1,15 +1,14 @@
-<template>
- <div class="mdev-main-wrapper">
-    <div class="">
-      <h2> Reset </h2>
-      <input v-model="user.email" type="text" placeholder="Email">
-      <button @click="reset"> reset </button>
-      <hr>
-      <p>
-        Don't have an account? <router-link to="/auth/register"> Sign Up! </router-link>
-      </p>
-    </div>
- </div>
+<template lang="pug">
+  .mdev-main-wrapper
+    div
+      h2
+        |Reset
+      input(v-model="user.email" type="text" placeholder="Email")
+      button(@click="reset")
+        |Reset
+      hr
+      p
+        |Don't have an account? <router-link to="/auth/register"> Sign Up! </router-link>
 </template>
 
 <script>

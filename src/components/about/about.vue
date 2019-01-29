@@ -1,7 +1,7 @@
-<template>
-  <section class="mdev-main-content">
-    <h1> ABOUT </h1>
-  </section>
+<template lang="pug">
+  .mdev-main-content
+    h1
+      |ABOUT
 </template>
 
 

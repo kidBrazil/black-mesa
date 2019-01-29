@@ -1,17 +1,17 @@
-<template>
-  <div class="mdev-main-wrapper">
-    <h2>Register</h2>
+<template lang="pug">
+  .mdev-main-wrapper
+    h2
+      |Register
 
-    <input v-model="user.email" type="email" placeholder="Email" >
-    <input v-model="user.firstname" type="text" placeholder="First name" >
-    <input v-model="user.lastname" type="text" placeholder="Last name" >
-    <input v-model="user.password" type="password" placeholder="Password" >
-    <button @click="register">Register</button>
-    <hr>
-    <p>
-      Already have an account? <router-link to="/auth/login">Login! </router-link>
-    </p>
-  </div>
+    input(v-model="user.email" type="email" placeholder="Email")
+    input(v-model="user.firstname" type="text" placeholder="First name")
+    input(v-model="user.lastname" type="text" placeholder="Last name")
+    input(v-model="user.password" type="password" placeholder="Password")
+    button(@click="register")
+      |Register
+    hr
+    p
+      |Already have an account? <router-link to="/auth/login">Login! </router-link>
 </template>
 
 <script>
