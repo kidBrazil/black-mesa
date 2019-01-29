@@ -34,7 +34,7 @@ This document will cover a brief listing of the dependencies being used on this 
 
 * [eslint-plugin-html](https://www.npmjs.com/package/eslint-plugin-html "ESlint documentation")
 
-* [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin "Extract Text Plugin")
+* [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin "Extract Text Plugin")
 
 * [favicons-webpack-plugin](https://www.npmjs.com/package/favicons-webpack-plugin
   "Webpack Favicon generator")
