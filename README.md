@@ -1,6 +1,22 @@
 ![MDEV Digital](https://mdev.digital/social/githubLogo.svg)
-#[ Black Mesa ] :8ball:
+
+# [ IMPORTANT ] :rotating_light:
+
+## First rodeo? READ THE DOCS!
+Please make sure you are familiar with the MDEV branching strategy and pull
+request rules. You can find details under `docs/branching.md`.
+
+There are also several other documents covering most of the functions and setup
+of this Vue boilerplate.
+
+## Starting a new project?
+Don't forget to populate all of the project placeholders with proper data based
+on the project at hand. You can easily find these by doing a search for `TODO`
+in the project either with `git grep` or your IDE of choice.
+
 ---
+
+# [ Black Mesa ] :8ball:
 
 Black Mesa aims to be a ready-to-deploy barebones boilerplate for web applications of small to medium size without any modification. It features: a full webpack 2.0 implementation with *linting, testing, internationalization, browser-caching, state management, authentication (firebase) and .gz compression.*
 
@@ -11,6 +27,7 @@ Support for large traffic or bigger applications can easily be added since the a
 **[For More Information Please View The Documents Section](./docs/README.md "Project Documentation")**
 
 ---
+
 
 ## :beers:Philosophy
 The main philosophy behind this project and why it was born is quite simple. Providing a quick and clean reactive/SPA deployment that can be setup quickly by any individual or team and that will auto-enforce best practices and QA. With the hope that *Fast deployment + Best practices* = less bugs and better quality. And we all know that less bugs = more :beers:
