@@ -16,6 +16,11 @@
 @import 'reset.scss';
 
 /*----
+	Global Variables
+-----*/
+@import './variables.scss';
+
+/*----
  Mdev Boilerplate
 -----*/
 @import '~@moreira-development/sass-boilerplate-lean/styles/global-main.scss';
@@ -24,11 +29,6 @@
   Flex
 -----*/
 @import './flex.scss';
-
-/*----
-	Global Variables
------*/
-@import './variables.scss';
 
 /*----
   Mixins
