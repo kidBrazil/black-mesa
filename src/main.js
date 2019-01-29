@@ -21,11 +21,13 @@ import checkView from 'vue-check-view';
 Vue.use(checkView);
 
 // Import Auth Plugin
+// TODO - Remove Auth if not being used
 import Auth from './plugins/auth.js';
 
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
+// TODO - Update locale files accordingly
 import en from './locales/en.js';
 import pt from './locales/pt.js';
 const locales = {
@@ -37,6 +39,7 @@ const locales = {
 Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueRouter);
+// TODO - Disable auth if not used
 Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
@@ -60,9 +63,11 @@ Object.keys(locales).forEach(function (lang) {
 
 // [ Vue Resource ] ------------------------------------
 // Set Global Root path
+// TODO - Point root option to appropriate DB as applicable
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
 // Set Global Intercept
+// TODO - Remove or edit interceptors as needed
 Vue.http.interceptors.push( (request, next) => {
   console.log(request);
   // To use when defining a single API that is not firebase
@@ -93,6 +98,7 @@ const router = new VueRouter ({
 
   //Control Scrolling Behavior
   scrollBehavior( to, from, savedPosition ){
+    // If URL has a #anchor
     if (to.hash) {
       return {
         selector: to.hash

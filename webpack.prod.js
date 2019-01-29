@@ -22,6 +22,8 @@ const setPath = function(folderName) {
 }
 
 // Robots.TXT Configuration
+// TODO - Update robots.txt for Staging & Production
+// While dev is being done switch to NO CRAWL
 const robotOptions = {
   policy: [
     {
@@ -72,15 +74,16 @@ module.exports = merge(common, {
     }),
     // Process and Inject Favicon
     new FaviconsWebpackPlugin({
+      // TODO - Make sure Favicon is the correct one for the project
       logo: './src/assets/images/favicon.png', // Source for Favicon file
       prefix: 'icons-[hash]/', // File Prefix
       emitStats: false,
       statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
-      // CHANGE COLOR OF THEME
+      // TODO - Update Theme color for background
       background: '#13b2a9',
-      // CHANGE PROJECT TITLE
+      // TODO - Update Title based on project
       title: 'MDEV Digital Inc.',
       // Icons to export
       icons: {
