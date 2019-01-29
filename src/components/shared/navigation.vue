@@ -117,15 +117,6 @@ export default{
 <style lang="scss">
 
 /*--------------------------------------*/
-/* Lean Import for Components           */
-/*--------------------------------------*/
-/* Disable because they are already linted */
-/* stylelint-disable */
-@import '../../assets/styles/variables.scss';
-//@import '../../assets/styles/global-main.scss';
-/* stylelint-enable */
-
-/*--------------------------------------*/
 /* Main Component Styles                */
 /*--------------------------------------*/
 .mdev-main-nav {

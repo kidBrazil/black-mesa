@@ -83,7 +83,7 @@ module.exports = {
             options: { presets: ['env'] }
           }]
       },
-      // Mini-Css-Extract-Plugin - Pulls SCSS/CSS into file
+      // CSS & SCSS Processing
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -91,6 +91,13 @@ module.exports = {
           'css-loader',
           'postcss-loader',
           'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // Load common SCSS [ Vars & Mixins ]
+              resources: './src/assets/styles/component-lean-main.scss',
+            },
+          }
         ],
       },
       // Image Processing

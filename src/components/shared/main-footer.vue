@@ -55,7 +55,6 @@ export default{
 
 <style lang="scss">
 
-@import '../../assets/styles/variables.scss';
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
