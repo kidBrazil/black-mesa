@@ -1,13 +1,13 @@
-<template>
-  <div class="mdev-split flex flex-hor-between flex-vert-center"
-    :class="{'--reversed' : reverse , '--top' : top}">
-    <div class="mdev-split-6" :class="animClassLeft" v-in-viewport>
-      <slot name="leftSlot"></slot>
-    </div>
-    <div class="mdev-split-4" :class="animClassRight" v-in-viewport>
-      <slot name="rightSlot"></slot>
-    </div>
-  </div>
+<template lang="pug">
+  //- Split component, reversible
+  .mdev-split.flex.flex-hor-between.flex-vert-center(
+    :class="{'--reversed' : reverse , '--top' : top}")
+    //- First Slot - Dynamic anim class
+    .mdev-split-6(:class="animClassLeft" v-in-viewport)
+      slot(name="leftSlot")
+    //- Second slot - Dynamic anim class
+    .mdev-split-4(:class="animClassRight" v-in-viewport)
+      slot(name="rightSlot")
 </template>
 
 

@@ -1,12 +1,12 @@
-<template>
-  <div class="mdev-split flex flex-hor-between flex-vert-center">
-    <div class="mdev-split-5" :class="animClassLeft" v-in-viewport>
-      <slot name="leftSlot"></slot>
-    </div>
-    <div class="mdev-split-5":class="animClassRight" v-in-viewport>
-      <slot name="rightSlot"></slot>
-    </div>
-  </div>
+<template lang="pug">
+  //- MDEV Split Component
+  .mdev-split.flex.flex-hor-between.flex-vert-center(:class="{'--reversed' : reversed' , '--top' : top}")
+    //- Animation class is dynamic passed as prop
+    .mdev-split-5(:class="animClassLeft" v-in-viewport)
+      slot(name="leftSlot")
+    //- Second slot
+    .mdev-split-5(:class="animClassRight" v-in-viewport)
+      slot(name="rightSlot")
 </template>
 
 
@@ -14,7 +14,7 @@
 <script>
 
 	export default {
-    props: ['animClassLeft', 'animClassRight']
+    props: ['animClassLeft', 'animClassRight', 'reversed', 'top']
 	};
 
 </script>

@@ -1,10 +1,11 @@
 <template lang="pug">
+  //- Wrapper class
   .mdev-main-wrapper
     div
       h2
         |Login>
       input(v-model="user.email" type="text" placeholder="Email")
-      input( v-model="user.password" type="password" placeholder="Password")
+      input(v-model="user.password" type="password" placeholder="Password")
       button(@click="login")
         |Log In
       hr

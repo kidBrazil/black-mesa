@@ -1,8 +1,12 @@
 <template lang="pug">
+  //- Nav element with Aria
   nav.mdev-main-nav(aria-role="navigation" role="navigation")
+    //- Wrapper Class
     .mdev-main-wrapper.flex.flex-nowrap.flex-hor-between.flex-vert-end
+      //- Logo Link
       a(:href="homeLink" :title="homeTitle" class="mdev-main-nav-branding")
         img(:src="loadImage(homeBrand)")
+      //- Actual navigational links in loop
       .mdev-main-nav-links.u-uppercase
         router-link(
           v-for="link in links"

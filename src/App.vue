@@ -1,19 +1,19 @@
-<template>
-  <main id="app">
-    <!-- Skip Navigatio Accessbility -->
-    <button href="#mainContent"
+<template lang="pug">
+  main(id="app")
+    //-Skip Navigatio Accessbility
+    button(href="#mainContent"
       title="Skip to main content"
       aria-label="Skip to main content"
       v-on:click.stop.prevent="skipNav"
-      class="mdev-skipnav" tabindex="0">
-      Skip To Main Content
-    </button>
+      class="mdev-skipnav" tabindex="0")
+        |Skip To Main Content
 
-    <main-navigation></main-navigation>
-    <transition name="fade">
-      <router-view></router-view>
-    </transition>
-  </main>
+    //- Main Navigation
+    main-navigation
+    //- Transition Wrapper
+    transition(name="fade")
+      //- Router View
+      router-view
 </template>
 
 

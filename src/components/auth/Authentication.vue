@@ -1,4 +1,5 @@
 <template lang="pug">
+    //-Router view to display child components
     router-view
 </template>
 
