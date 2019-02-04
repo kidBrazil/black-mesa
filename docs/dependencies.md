@@ -14,6 +14,8 @@ This document will cover a brief listing of the dependencies being used on this 
 
 * [vue-style-loader](https://github.com/vuejs/vue-style-loader "Vue Style Loader documentation")
 
+* [vue-prerender](https://github.com/eldarc/vue-prerender "Vue Prerenderer")
+
 * [sass-resources-loader](https://github.com/shakacode/sass-resources-loader
   "SASS Share Resources")
 
@@ -56,6 +58,8 @@ This document will cover a brief listing of the dependencies being used on this 
 * [stylelint-processor-html](https://github.com/ccbikai/stylelint-processor-html "Stylelint documentation")
 
 * [stylelint-webpack-plugin](https://www.npmjs.com/package/stylelint-webpack-plugin "Stylelint documentation")
+
+* [vue-head](https://github.com/ktquez/vue-head "Vue-head documentation")
 
 * [webpack](https://webpack.js.org/configuration/ "Webpack documentation")
 
