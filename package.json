@@ -9,7 +9,8 @@
     "dev": "npm run lintcss && webpack-dev-server --open --config webpack.dev.js",
     "lintcss": "stylelint '**/*.scss' --syntax scss",
     "prod": "webpack --config webpack.prod.js",
-    "build": "npm run lintcss && npm run prod",
+    "prerender": "node prerender-build.js",
+    "build": "npm run lintcss && npm run prod && npm run prerender",
     "clean": "rm -r dist/",
     "build-deploy": "npm run clean && npm run build && s3-website deploy",
     "deploy": "s3-website deploy"
@@ -59,6 +60,7 @@
     "vue-i18n": "^5.0.0",
     "vue-in-viewport-directive": "^1.1.4",
     "vue-loader": "^15.6.2",
+    "vue-prerender": "^0.1.2",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.2",
     "vue-style-loader": "^4.1.2",

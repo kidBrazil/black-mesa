@@ -142,7 +142,7 @@ Vue.mixin({
 
 
 // [ Main Vue Instance ] ----------------------------
-new Vue({
+const _vue = new Vue({
   el: '#app',
   http: {
     root: '/root',
@@ -154,3 +154,5 @@ new Vue({
   store,
   render: h => h(App)
 });
+
+window._vuePrerender = _vue;
