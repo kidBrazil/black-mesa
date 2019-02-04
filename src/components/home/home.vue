@@ -19,6 +19,14 @@ import TestDiv   from '../modules/sixty-forty.vue';
 
 export default{
   name: 'HomePage',
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'CLIENT PROJECT',
+      complement: 'MDEV DIGITAL'
+    },
+  },
   components: {
     'hero-main'         : HeroMain,
     'main-footer'       : MainFooter,

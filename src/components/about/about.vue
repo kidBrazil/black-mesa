@@ -10,6 +10,14 @@
 <script>
 export default{
   name: 'About',
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'ABOUT',
+      complement: 'MDEV DIGITAL'
+    },
+  },
   data: function(){
     return{
 
