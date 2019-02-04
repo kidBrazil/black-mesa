@@ -16,6 +16,11 @@ export default{
       complement: 'MDEV DIGITAL'
     },
   },
+  meta: [
+    { property: 'og:title', content: '404 | MDEV DIGITAL' },
+    { name: 'twitter:title', content: '404 | MDEV DIGITAL' }
+  ],
+
   data: function(){
     return{
 

@@ -26,6 +26,10 @@ export default{
       inner: 'CLIENT PROJECT',
       complement: 'MDEV DIGITAL'
     },
+    meta: [
+      { property: 'og:title', content: 'CLIENT PROJECT | MDEV DIGITAL' },
+      { name: 'twitter:title', content: 'CLIENT PROJECT | MDEV DIGITAL' }
+    ]
   },
   components: {
     'hero-main'         : HeroMain,

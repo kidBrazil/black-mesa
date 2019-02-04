@@ -13,6 +13,10 @@ export default {
       inner: 'AUTHENTICATION',
       complement: 'MDEV DIGITAL'
     },
+    meta: [
+      { property: 'og:title', content: 'AUTHENTICATION | MDEV DIGITAL' },
+      { name: 'twitter:title', content: 'AUTHENTICATION | MDEV DIGITAL' }
+    ]
   },
   mounted: function() {console.log('Auth Here');}
 };

@@ -19,6 +19,10 @@ export default{
       inner: 'ABOUT',
       complement: 'MDEV DIGITAL'
     },
+    meta: [
+      { property: 'og:title', content: 'ABOUT | MDEV DIGITAL' },
+      { name: 'twitter:title', content: 'ABOUT | MDEV DIGITAL' }
+    ]
   },
 
   data: function(){
