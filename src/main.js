@@ -45,6 +45,7 @@ Vue.use(VueResource);
 Vue.use(VueHead, {
   separator: ' | '
 })
+// Vue Router
 Vue.use(VueRouter);
 // TODO - Disable auth if not used
 Vue.use(Auth);
