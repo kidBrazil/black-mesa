@@ -6,7 +6,7 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import VueHead from 'vue-head';
+import Meta from 'vue-meta'
 import App from './App.vue';
 
 // Import Routes & Central Stores
@@ -39,14 +39,10 @@ const locales = {
 // Initialize vue-resource | vue-router | vue-i18n
 Vue.use(VueI18n);
 Vue.use(VueResource);
-// Vue Head Configuration
-// TODO - Edit Title Separator
-// SEE - https://github.com/ktquez/vue-head
-Vue.use(VueHead, {
-  separator: ' | '
-})
 // Vue Router
 Vue.use(VueRouter);
+// Meta Info
+Vue.use(Meta)
 // TODO - Disable auth if not used
 Vue.use(Auth);
 

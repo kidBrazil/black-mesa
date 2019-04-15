@@ -25,6 +25,24 @@
 import MainNavigation from './components/shared/navigation.vue';
 
 export default{
+  name: 'App',
+
+  metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      // Dispatch event for Prerenderer
+      document.dispatchEvent(new Event('spa-rendered'));
+    },
+    // TODO - Update Meta Information
+    title: 'BLACK MESA',
+    titleTemplate: '%s | CLIENT PROJECT | MDEV DIGITAL',
+    meta: [
+      { property: 'og:title', content: 'Open Graph Title' },
+      { name: 'twitter:title', content: 'Twitter Card Title' },
+      { name: 'description', content: 'Meta Description'},
+      { name: 'twitter:description', content: 'Twitter Card Description'},
+      { property: 'og:description', content: 'Open Graph Description'}
+    ]
+  },
 
   components: {
     'main-navigation' : MainNavigation
