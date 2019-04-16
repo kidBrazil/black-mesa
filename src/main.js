@@ -6,7 +6,9 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
+// Meta SEO Injector
 import Meta from 'vue-meta'
+// App Entrypoint
 import App from './App.vue';
 
 // Import Routes & Central Stores
@@ -41,7 +43,7 @@ Vue.use(VueI18n);
 Vue.use(VueResource);
 // Vue Router
 Vue.use(VueRouter);
-// Meta Info
+// Meta Info injector
 Vue.use(Meta)
 // TODO - Disable auth if not used
 Vue.use(Auth);
@@ -132,6 +134,12 @@ Vue.mixin({
       } else {
         this.$locale.change('en');
       }
+    },
+    // Scroll to specific anchor link
+    scrollToHash(hashRef, offset) {
+      var element = $(hashRef);
+      var top = element.offset().top;
+      window.scrollTo(0, (top - offset));
     }
   }
 })
@@ -151,5 +159,3 @@ const _vue = new Vue({
   store,
   render: h => h(App)
 });
-
-window._vuePrerender = _vue;

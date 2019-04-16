@@ -7,14 +7,18 @@
 // Require Imports
 var webpack = require('webpack');
 var path = require('path')
+// Robotos Automation
 const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
+// Favicon Automation
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// Minification & Optimization
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// SPA Prerenderer
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
-//
+
 // Webpack Merge Configuration
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -102,16 +106,29 @@ module.exports = merge(common, {
         windows: false
       }
     }),
+    // Prerenderer Plugin
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
+      // Routes to render
       routes: [
         // TODO - Add desired prerender routes
         '/',
       ],
-
+      // Export & Optimization options
+      minify: {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        decodeEntities: true,
+        keepClosingSlash: true,
+        sortAttributes: true
+      },
+      // Renderer Options
       renderer: new Renderer({
         headless: true,
-        renderAfterDocumentEvent: 'spa-rendered'
+        // Using render after time because trigger doesn't work.
+        renderAfterTime: 12000
+        // Render based on event
+        //renderAfterDocumentEvent: 'spa-rendered'
       })
     }),
 
