@@ -50,6 +50,7 @@ then
       # INVALIDATE RECORDS ON SECONDARY DISTRIBUTION
       aws cloudfront create-invalidation --distribution-id $CF_REDIRECT_DISTRIBUTION --paths /
       echo "${GREEN}[ Changes Successfully Deployed to AWS! ]${NC}"
+      npm run clean
       exit 0
     else
       error_handle "Something went wrong while deploying to AWS"

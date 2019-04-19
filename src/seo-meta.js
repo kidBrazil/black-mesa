@@ -45,6 +45,14 @@ export default  {
   siteSeo: {
     template: '%s | MDEV Digital | London, Toronto, Montreal',
     templateAddon: ' | MDEV Digital | London, Toronto, Montreal',
+    social: {
+      appid: 'ID-GOES-HERE',
+      ogtype: 'website',
+      cardtype: 'summary_large_image',
+      twsite: '@MDEVdigital',
+      ogimage: 'social/MDEV-FB-OG_v01.jpg',
+      twimage: 'social/MDEV-TW-Card_v01.png'
+    },
     app: {
       title: 'Base Project Setup - TODO Change',
       desc: 'This is a basic project install of BlackMesa'
