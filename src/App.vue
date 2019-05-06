@@ -21,11 +21,7 @@
       v-on:dismiss="cookies = false")
 </template>
 
-
-
-
 <script>
-
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
 import CookiePopup    from './components/shared/cookies.vue';
@@ -40,35 +36,99 @@ export default {
       seo: SEOData.siteSeo,
       cookies: false,
       showCookies: false,
-    };
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
+   };
   },
   // Meta SEO Function
   metaInfo() {
     return {
       title: this.seo.app.title,
       titleTemplate: this.seo.template,
+      link: [
+        // Font Awesome
+        { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
+        // Alertiry
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' }
+      ],
+      script: [
+        // Alertify
+        { src: 'https://mdevcdn.digital/alerts/alertify.js', async: true, defer: true },
+      ],
       meta: [
+        // SEO
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) },
         { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
         { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.social.ogimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.ogimage) },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.twimage) },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
       ]
     };
   },
 
+  created: function(){
+    // [ PRERENDERER CAVEATS ] -----------------------------
+    // Prerenderers are great cuz SEO... but they suck at handling
+    // script injection from trackers.
+    // To solve the problem, we prevent the scripts from being loaded.
+    //
+    // __PRERENDER_INJECTED is a window object that only gets added by
+    // the prerenderer. These async calls will only execute on the intended
+    // client side environment.
+    if (!window.__PRERENDER_INJECTED) {
+      // Load Google Maps
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=APIKEYHERE-TODO', true, true);
+      // Load Google Tag Manager
+      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
+      this.asyncScript( '/js/googletag.js', false, false);
+      // Load Facebook Pixel
+      this.asyncScript( '/js/fbpixel.js', false, false);
+    }
+  },
+
   mounted: function(){
     // Wait for full load and next tic on VM
     this.$nextTick(() => {
+      // [ PRERENDER SNAPSHOT ] ------------------------
+      // Dispatches event to tell the prerenderer to take snapshot
+      if (window.__PRERENDER_INJECTED) {
+        document.dispatchEvent(new Event('spa-rendered'));
+      }
+
       // Check Cookies
       setTimeout(() => {
         this.checkCookie();
       }, 5000);
+
+      // [ FANCY CONSOLE OUTPUT ] --------------------------
+      // each %c allows you to create a styling block
+      // style each block in order below it
+      if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
+        window.console.log.apply(console, [
+          "\n %c Made with SASS by MDEV Digital 😜",
+          "color: #fff; background: #16b1a9; ;font-family: sans-serif; text-transform: uppercase; font-size: 225%; font-weight: 700; padding:10px; border-radius: 20px 0 20px 0;"
+        ]);
+        window.console.log.apply(console, [
+        ]);
+      }
     });
+  },
+
+  updated: function() {
+    // [ PRERENDER SNAPSHOT ] ------------------------
+    // Dispatches event to tell the prerenderer to take snapshot
+    if (window.__PRERENDER_INJECTED) {
+      document.dispatchEvent(new Event('spa-rendered'));
+    }
   },
 
   components: {
@@ -194,5 +254,27 @@ body::-webkit-scrollbar-thumb {
   background-color: lighten($color-brand-primary, 10%);
   outline: 4px solid darken($color-brand-bkg, 10%);
 }
+
+
+::selection {
+  background: $color-brand-accent;
+}
+::-moz-selection {
+  background: $color-brand-accent;
+}
+
+h1.u-c-primary::selection,
+h2.u-c-primary::selection,
+h3.u-c-primary::selection,
+h4.u-c-primary::selection {
+  background: $color-brand-bkg;
+}
+h1.u-c-primary::-moz-selection,
+h2.u-c-primary::-moz-selection,
+h3.u-c-primary::-moz-selection,
+h4.u-c-primary::-moz-selection {
+  background: $color-brand-bkg;
+}
+
 /* stylelint-enable */
 </style>

@@ -7,6 +7,12 @@
 // Require Imports
 var webpack = require('webpack');
 var path = require('path')
+
+// Webpack Merge Configuration
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
+const CompressionPlugin = require("compression-webpack-plugin");
+
 // Robotos Automation
 const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
 // Favicon Automation
@@ -18,17 +24,36 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // SPA Prerenderer
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+// Sitemap Generator
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+// WebP Processing
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
-// Webpack Merge Configuration
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const CompressionPlugin = require("compression-webpack-plugin");
+// WebP Image Processing Options
+const webpOptions =  {
+  config: [{
+    test: /\.(jpe?g|png)/,
+    options: {
+      quality:  100,
+      lossless: true
+    }
+  }],
+  overrideExtension: false,
+  detailedLogs: false,
+  strict: true
+}
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
 }
 
-// Robots.TXT Configuration
+// SEO & Sitemap Configuration
+const hostDomainUrl = "https://EXAMPLE"
+const sitemapFile = hostDomainUrl + "/sitemap.xml"
+// [ Robots.TXT Configuration ]
+// Fully automated robots.txt generation based on policy listed
+// below. Remember to disalow bots during staging and enable for
+// prod environment.
 // TODO - Update robots.txt for Staging & Production
 // While dev is being done switch to NO CRAWL
 const robotOptions = {
@@ -36,28 +61,30 @@ const robotOptions = {
     {
       userAgent: "Googlebot",
       allow: "/",
-      disallow: ["/search"],
-      crawlDelay: 2
-    },
-    {
-      userAgent: "OtherBot",
-      allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
-      disallow: ["/admin", "/login"],
       crawlDelay: 2
     },
     {
       userAgent: "*",
       allow: "/",
-      disallow: "/search",
+      //disallow: "/",
+      //disallow: "/search",
       crawlDelay: 10,
-      cleanParam: "ref /articles/"
     }
-    ],
-    sitemap: "http://example.com/sitemap.xml",
-    host: "http://example.com"
+  ],
+  // Configured on SEO &Sitemap Configuration
+  sitemap: sitemapFile,
+  host: hostDomainUrl
 }
 
-// Module Exports
+// Prerenderer Routes - TODO - Update according to present routes
+// These tell the prerenreder which routes to render..
+// These should match routes.js
+const prerenderRoutes = [
+  '/',
+  '/about'
+]
+
+// Production Environment Exports
 module.exports = merge(common, {
   // Set Webpack Mode
   mode: 'production',
@@ -81,17 +108,16 @@ module.exports = merge(common, {
     }),
     // Process and Inject Favicon
     new FaviconsWebpackPlugin({
-      // TODO - Make sure Favicon is the correct one for the project
       logo: './src/assets/images/favicon.png', // Source for Favicon file
       prefix: 'icons-[hash]/', // File Prefix
       emitStats: false,
       statsFilename: 'iconstats-[hash].json',
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
-      // TODO - Update Theme color for background
-      background: '#13b2a9',
-      // TODO - Update Title based on project
-      title: 'MDEV Digital Inc.',
+      // CHANGE COLOR OF THEME - TODO
+      background: '#0a1315',
+      // CHANGE PROJECT TITLE - TODO
+      title: 'MDEV | The Start Of Something New',
       // Icons to export
       icons: {
         android: true,
@@ -106,14 +132,39 @@ module.exports = merge(common, {
         windows: false
       }
     }),
-    // Prerenderer Plugin
+    new ImageminWebpWebpackPlugin(webpOptions),
+    // [ PRERENDERER ]--------------------------------
+    // The prerenderer is the solution for the SEO problem
+    // encountered by all SPAs. This plugin will run through the
+    // routes present on the renderedRoutes array and generate a
+    // plain HTML file. When crawlers hit the site, they will see
+    // these HTML files and index the information
+    //
+    // CAVEATS --
+    // Some plugins and scripts will cause issues and must be prevented
+    // from running on the prerenderer
+    //
+    // __PRERENDER_INJECTED  -----
+    // We can control script execution on the application by looking for
+    // the window.__PRERENDER_INJECTED property. This property will be either
+    // undefined or true. True value indicates you are in the pupeteeer
+    // prerender environment. Adjust scripts accordingly
+    //
+    // postProcess() -----
+    // this function is used to remove active classes from the body of the HTML
+    // to prevent flashes of content during initial load. We want the vue instance
+    // to take care of placing those classes when needed.
+    //
+    // SNAPSHOT ----
+    // This plugin takes a snapshot of the HTML when it sees a trigger event. In
+    // our configuration the prerenderer is looking for the following event:
+    //
+    // document.dispatchEvent(new Event('spa-rendered'));
+    //
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
       // Routes to render
-      routes: [
-        // TODO - Add desired prerender routes
-        '/',
-      ],
+      routes: prerenderRoutes,
       // Export & Optimization options
       minify: {
         collapseBooleanAttributes: true,
@@ -122,16 +173,40 @@ module.exports = merge(common, {
         keepClosingSlash: true,
         sortAttributes: true
       },
+      // Process page before output..
+      postProcess(renderedRoute) {
+        // Remove active classes from prerendered routes
+        //renderedRoute.html = renderedRoute.html
+          //.replace('--mask-active', '')
+          //.replace('--nav-active', '')
+          //.replace('--active', '')
+          //.replace('<body>','<body class="u-freeze-scroll">')
+          //.replace('id="map"', '');
+
+        return renderedRoute;
+      },
       // Renderer Options
       renderer: new Renderer({
+        // Inject window property
+        injectProperty: '__PRERENDER_INJECTED',
+        inject: {
+          stopScripts: true
+        },
         headless: true,
-        // Using render after time because trigger doesn't work.
-        renderAfterTime: 12000
-        // Render based on event
-        //renderAfterDocumentEvent: 'spa-rendered'
+        // Triggered by App.Vue
+        renderAfterDocumentEvent: 'spa-rendered'
+        //renderAfterTime: 10000
       })
     }),
-
+    // [ Sitemap Generation ]
+    // Also to aid with SEO and automation this plugin will generate
+    // a full XML sitemap based on the routes given to the prerenderer.
+    new SitemapPlugin(hostDomainUrl, prerenderRoutes, {
+      changeFreq: 'monthly',
+      lastMod: true,
+      priority: '0.4',
+      skipGzip: true,
+    }),
     // Gzip Compression
     new CompressionPlugin({
       asset: "[path].gz[query]",

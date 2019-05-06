@@ -11,6 +11,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
@@ -23,8 +24,6 @@ module.exports = {
     build: './src/main.js',
     vendor: [
       'vue',
-      'vue-i18n',
-      'vue-resource',
       'vue-router'
     ]
   },
@@ -81,11 +80,15 @@ module.exports = {
       // JS Processing & Transpiling
       {
         test: /\.js$/,
-          exclude: /(node_modules)/,
-          use: [{
-            loader: "babel-loader",
-            options: { presets: ['env'] }
-          }]
+        use: [{
+          loader: "babel-loader",
+          options: {
+            include: [
+              path.resolve(__dirname, "node_modules"),
+              path.resolve(__dirname, "src")
+            ]
+          }
+        }]
       },
       // CSS & SCSS Processing
       {
@@ -113,16 +116,16 @@ module.exports = {
             // JPEG Processing
             mozjpeg: {
               progressive: true,
-              quality: 90
+              quality: 95
             },
             // GIF Processing
             gifsicle: {
               interlaced: false,
-              optimizationLevel: 2
+              optimizationLevel: 3
             },
             // PNG Processing
             pngquant: {
-              quality: '75-80',
+              quality: '85-90',
               speed: 2
             },
             // SVG Processing
@@ -155,7 +158,10 @@ module.exports = {
     // CSS Output
     new MiniCssExtractPlugin({
       filename: "assets/styles/styles-[hash].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets/js', to: 'js', force: true }
+    ]),
   ],
   resolve: {
     alias: {
