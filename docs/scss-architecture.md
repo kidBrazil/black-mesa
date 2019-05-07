@@ -1,3 +1,0 @@
-#SCSS Architecture
-
-##Under Construction

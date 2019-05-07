@@ -11,7 +11,7 @@
 // TODO - Replace MDEV-BTN
 .mdev-btn {
   width: auto;
-  padding: .7vw 1vw;
+  padding: 10px;
   display: inline-block;
   text-transform: uppercase;
   font-weight: 500;
@@ -38,15 +38,15 @@
   }
 
   @media #{$portrait} {
-    padding: 2vw 2.3vw;
+    padding: 15px 20px;
   }
 
   @media #{$tablet-lnd-only} {
-    padding: 1vw 1.3vw;
+    padding: 10px 15px;
   }
 
   @media #{$phone-only} {
-    padding: 4vw 4.3vw;
+    padding: 8px 10px;
     letter-spacing: 1px;
   }
 }

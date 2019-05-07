@@ -10,14 +10,13 @@ This document will cover a brief listing of the dependencies being used on this 
 
 * [vue-router](https://github.com/vuejs/vue-router "Vue Router documentation")
 
-* [vue-resource](https://github.com/pagekit/vue-resource "Vue Resource documentation")
+* [axios](https://github.com/axios/axios "Axios-AJAX")
 
 * [vue-style-loader](https://github.com/vuejs/vue-style-loader "Vue Style Loader documentation")
 
 * [vue-prerender](https://github.com/eldarc/vue-prerender "Vue Prerenderer")
 
-* [sass-resources-loader](https://github.com/shakacode/sass-resources-loader
-  "SASS Share Resources")
+* [sass-resources-loader](https://github.com/shakacode/sass-resources-loader "SASS Share Resources")
 
 ##:floppy_disk:Dev Dependencies
 * [sass-boilerplate-lean](https://github.com/MoreiraDevelopment/sass-boilerplate/tree/master/sass-boilerplate-lean "MDEV Sass Boilerplate")

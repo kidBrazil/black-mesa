@@ -12,6 +12,9 @@
 </template>
 
 <script>
+// Axios for HTTP Requests
+import axios         from 'axios';
+
 export default {
  name: "RegisterComponent",
 

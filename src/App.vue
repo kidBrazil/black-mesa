@@ -103,6 +103,15 @@ export default {
       if (window.__PRERENDER_INJECTED) {
         document.dispatchEvent(new Event('spa-rendered'));
       }
+      else {
+        // Track event on Facebook
+        if ( window.fbq ) {
+          window.fbq('track', 'PageView');
+        }
+        else {
+          console.log('Fb pixel not initialized');
+        }
+      }
 
       // Check Cookies
       setTimeout(() => {
@@ -128,6 +137,15 @@ export default {
     // Dispatches event to tell the prerenderer to take snapshot
     if (window.__PRERENDER_INJECTED) {
       document.dispatchEvent(new Event('spa-rendered'));
+    }
+    else {
+      // Track event on Facebook
+      if ( window.fbq ) {
+        window.fbq('track', 'PageView');
+      }
+      else {
+        console.log('Fb pixel not initialized');
+      }
     }
   },
 
