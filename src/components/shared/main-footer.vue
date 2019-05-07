@@ -1,7 +1,7 @@
 <template lang="pug">
     div
       h2
-        |Welcome To MDEV Boilerplate
+        |MDEV Digital - Vue.js Boilerplate
       a.mdev-boilerlink(href="https://github.com/MdevDigitalInc/black-mesa" title="Documentation")
         |Boilerplate Documentation
       a.mdev-boilerlink(href="https://github.com/MdevDigitalInc/sass-boilerplate" title="Documentation")

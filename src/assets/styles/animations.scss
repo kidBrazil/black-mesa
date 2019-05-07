@@ -7,6 +7,26 @@
 $blur-anim-props: filter 1s, opacity .6s;
 
 // Starting State
+.a-fade-in,
+.a-fade-in-full {
+  opacity: 0;
+  transition: $blur-anim-props;
+}
+
+// End State - Triggered by in-viewport directive
+.a-fade-in-full.in-viewport,
+.a-fade-in-full.above-viewport,
+.a-fade-in.in-viewport,
+.a-fade-in.in-viewport,
+.a-fade-in.above-viewport,
+.a-fade-in-lnd.in-viewport,
+.a-fade-in-lnd.in-viewport,
+.a-fade-in-lnd.above-viewport {
+  opacity: 1;
+}
+
+
+// Starting State
 .a-blur-in {
   filter: blur(3px);
   opacity: 0;
@@ -23,11 +43,11 @@ $blur-anim-props: filter 1s, opacity .6s;
 }
 
 // End State - Triggered by in-viewport directive
-.a-blur-in.fully-in-viewport,
+.a-blur-in.in-viewport,
 .a-blur-in.in-viewport,
 .a-blur-in.above-viewport,
-.a-blur-in-lnd.fully-in-viewport,
 .a-blur-in-lnd.in-viewport,
+.a-blur-in-lnd.fully-in-viewport,
 .a-blur-in-lnd.above-viewport {
   opacity: 1;
   filter: blur(0);
@@ -78,13 +98,13 @@ $zoom-in-anim-props: opacity .9s ease-out, filter 1.2s ease-out, transform 1.2s 
 }
 
 // End State - Triggered by in-viewport directive
-.a-zoom-out-lnd.fully-in-viewport,
+.a-zoom-out-lnd.in-viewport,
 .a-zoom-out-lnd.above-viewport,
-.a-zoom-out.fully-in-viewport,
+.a-zoom-out.in-viewport,
 .a-zoom-out.above-viewport,
-.a-zoom-in-lnd.fully-in-viewport,
+.a-zoom-in-lnd.in-viewport,
 .a-zoom-in-lnd.above-viewport ,
-.a-zoom-in.fully-in-viewport,
+.a-zoom-in.in-viewport,
 .a-zoom-in.above-viewport {
   opacity: 1;
   filter: blur(0);
@@ -113,12 +133,19 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 
 .a-flyin-left {
   transform: translate3d( -100%, 0, 0);
+
+  @media #{$phone-only} {
+    transform: translate3d( -50%, 0, 0);
+  }
 }
 
 // Landscape Only
 .a-flyin-lnd-left {
   @media #{$portrait} {
     transform: translate3d( -100%, 0, 0);
+  }
+  @media #{$phone-only} {
+    transform: translate3d( -50%, 0, 0);
   }
 }
 
@@ -129,12 +156,20 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 
 .a-flyin-right {
   transform: translate3d( 100%, 0, 0);
+
+  @media #{$phone-only} {
+    transform: translate3d( 50%, 0, 0);
+  }
 }
 
 // Landscape Only
 .a-flyin-lnd-right {
   @media #{$landscape} {
     transform: translate3d( 100%, 0, 0);
+  }
+
+  @media #{$phone-only} {
+    transform: translate3d( 50%, 0, 0);
   }
 }
 
@@ -172,22 +207,55 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 
 // Trigger animation based on viewport
 .a-flyin-lnd-left.fully-in-viewport,
+.a-flyin-lnd-left.in-viewport,
 .a-flyin-lnd-left.above-viewport,
-.a-flyin-left.fully-in-viewport,
+.a-flyin-left.in-viewport,
 .a-flyin-left.above-viewport,
 .a-flyin-lnd-right.fully-in-viewport,
+.a-flyin-lnd-right.in-viewport,
 .a-flyin-lnd-right.above-viewport,
-.a-flyin-right.fully-in-viewport,
+.a-flyin-right.in-viewport,
 .a-flyin-right.above-viewport,
 .a-flyin-lnd-bot.fully-in-viewport,
+.a-flyin-lnd-bot.in-viewport,
 .a-flyin-lnd-bot.above-viewport,
-.a-flyin-bot.fully-in-viewport,
+.a-flyin-bot.in-viewport,
 .a-flyin-bot.above-viewport,
-.a-flyin-lnd-top.fully-in-viewport,
+.a-flyin-lnd-top.in-fully-viewport,
+.a-flyin-lnd-top.in-viewport,
 .a-flyin-lnd-top.above-viewport,
-.a-flyin-top.fully-in-viewport,
+.a-flyin-top.in-viewport,
 .a-flyin-top.above-viewport,
 .a-in-viewport.in-viewport {
   opacity: 1;
   transform: translate3d( 0, 0, 0);
+}
+
+
+// 3D Rotates
+$rotate-anim-props: transform 1s, opacity .6s;
+// Starting State
+.a-rotate-x {
+  opacity: 0;
+  transform-origin: bottom;
+  transform: rotate3d( 1, 0, 1, 90deg);
+  transition: $rotate-anim-props;
+}
+
+.a-rotate-x-r {
+  opacity: 0;
+  transform-origin: bottom;
+  transform: rotate3d( 1, 0, 1, -90deg);
+  transition: $rotate-anim-props;
+}
+
+// End State - Triggered by in-viewport directive
+.a-rotate-x.in-viewport,
+.a-rotate-x.in-viewport,
+.a-rotate-x.above-viewport,
+.a-rotate-x-r.in-viewport,
+.a-rotate-x-r.in-viewport,
+.a-rotate-x-r.above-viewport {
+  opacity: 1;
+  transform: rotate3d( 1, 0, 1, 0);
 }

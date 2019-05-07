@@ -51,21 +51,22 @@ border-spacing: 0;
 html {
   box-sizing: border-box;
 }
-  *, *:before, *:after {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
-img {
+img,
+picture {
   border-style: none;
   vertical-align: bottom;
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
-
-// Adds antialiasing site wide
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// Hide Focus Highlight Square
+//*:focus {
+//  outline: none;
+//  box-shadow: none;
+//}
 /* stylelint-enable */

@@ -3,7 +3,6 @@
 /-------------------------------------*/
 
 //Text Utilities
-
 .u-uppercase {
   text-transform: uppercase;
 }
@@ -48,6 +47,14 @@
   font-weight: 700;
 }
 
+.u-medium {
+  font-weight: 500;
+}
+
+.u-normal {
+  font-weight: 400;
+}
+
 .u-black {
   font-weight: 900;
 }
@@ -71,6 +78,18 @@
   }
 }
 
+.u-hidden-portrait {
+  @media #{$portrait} {
+    display: none !important;
+  }
+}
+
+.u-hidden-landscape {
+  @media #{$landscape} {
+    display: none !important;
+  }
+}
+
 .u-hidden-tablet {
   @media #{$tablet-only} {
     display: none !important;
@@ -78,7 +97,6 @@
 }
 
 .u-hidden-desktop {
-
   @media #{$tablet-up} {
     display: none !important;
   }
@@ -94,7 +112,6 @@
   left: -9999px;
   visibility: hidden!important;
 }
-
 
 .u-transparent {
   opacity: 0 !important;
@@ -112,10 +129,6 @@
 
 .u-truncate {
   @include truncate('100%');
-}
-
-.clear {
-  @include clearfix();
 }
 
 .u-no-select {
@@ -139,7 +152,18 @@
   color: $white;
 }
 
-// Body Utilities
-.--body-white {
-  background: $white;
+.u-desk-only {
+  @media #{$portrait} {
+    display: none;
+  }
+}
+
+.u-phone-only {
+  @media #{$landscape} {
+    display: none;
+  }
+}
+
+.u-pointer {
+  cursor: pointer;
 }

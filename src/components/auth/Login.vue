@@ -28,16 +28,19 @@ export default {
 
  methods: {
   login: function() {
-    this.$http.post("user.json", this.user)
-      .then(function(res){
-        // Notify User
-        alertify.success('You have Successfully Created a User.');
-        // Store Token
-        this.$auth.setToken('abcd', Date.now() + 14400000);
-        // Redirect
-        this.$router.push('/auth/reset');
-      });
-    console.log(this.user);
+    axios.post('https://restful-api', {
+      user: this.user,
+    })
+    .then(function (response) {
+      alertify.success('You have Successfully Created a User.');
+      // Store Token
+      this.$auth.setToken('abcd', Date.now() + 14400000);
+      // Redirect
+      this.$router.push('/auth/reset');
+    })
+    .catch(function (error) {
+      alertify.error(this.$t(error));
+    });
   }
  }
 };

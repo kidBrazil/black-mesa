@@ -25,11 +25,15 @@ export default {
 
  methods: {
   register: function() {
-    this.$http.post("user.json", this.user)
-      .then(function(res){
-        alertify.success('You have Successfully Reset your Password');
-      });
-    console.log(this.user);
+    axios.post('https://restful-api', {
+      user: this.user,
+    })
+    .then(function (response) {
+      alertify.success('You have Successfully Reset your Password');
+    })
+    .catch(function (error) {
+      alertify.error(this.$t(error));
+    });
   }
  }
 };

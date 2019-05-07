@@ -5,7 +5,6 @@
 import '@babel/polyfill'
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 // Meta SEO Injector
 import Meta from 'vue-meta'
@@ -25,10 +24,12 @@ Vue.directive('in-viewport', inViewportDirective);
 import checkView from 'vue-check-view';
 Vue.use(checkView);
 
+// [ Auth Plugin ] ----------- Uncomment to use
 // Import Auth Plugin
-// TODO - Remove Auth if not being used
 //import Auth from './plugins/auth.js';
 //Vue.use(Auth);
+
+// [ Validator Plugin ] ----------- Uncomment to use
 // Form Validation Plugin
 //import Validate from './plugins/validate.js';
 //Vue.use(Validate);
@@ -44,9 +45,7 @@ const locales = {
   pt
 };
 
-// Initialize vue-resource | vue-router | vue-i18n
 Vue.use(VueI18n);
-Vue.use(VueResource);
 // Vue Router
 Vue.use(VueRouter);
 // Meta Info injector
@@ -71,29 +70,6 @@ Object.keys(locales).forEach(function (lang) {
   Vue.locale(lang, locales[lang]);
 });
 //-----------------------------------------------[ i18n ]
-
-// [ Vue Resource ] ------------------------------------
-// Set Global Root path
-// TODO - Point root option to appropriate DB as applicable
-Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
-
-// Set Global Intercept
-// TODO - Remove or edit interceptors as needed
-Vue.http.interceptors.push( (request, next) => {
-  console.log(request);
-  // To use when defining a single API that is not firebase
-  //if (request.url[0] === '/'){
-  //  request.url = "https:apiurl:3030" + request.url;
-  //}
-  next( function(response){
-    if (response.status == 404){
-      alertify.error('Sorry, Our systems are not responding right now.');
-    }
-  });
-});
-
-//--------------------------------------[ vue-resource ]
-
 
 // [ Vue-Router ] ------------------------------------
 // --------------------------------

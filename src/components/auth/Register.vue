@@ -11,7 +11,8 @@
       |Register
     hr
     p
-      |Already have an account? <router-link to="/auth/login">Login! </router-link>
+      |Already have an account?
+    router-link(to="/auth/login")
 </template>
 
 <script>
@@ -30,13 +31,16 @@ export default {
  },
  methods: {
   register: function() {
-    this.$http.post("/user.json", this.user)
-      .then(function(res){
-        alertify.success('You have Successfully Created a User.');
-        alertify.success('You will be redirected to Login shortly...');
-      }).done();
-
-    console.log(this.user);
+    axios.post('https://restful-api', {
+      user: this.user,
+    })
+    .then(function (response) {
+      alertify.success('You have Successfully Created a User.');
+      alertify.success('You will be redirected to Login shortly...');
+    })
+    .catch(function (error) {
+      alertify.error(this.$t(error));
+    });
   }
  }
 };
