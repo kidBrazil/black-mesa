@@ -127,6 +127,10 @@ export default {
         window.console.log.apply(console, [
         ]);
       }
+      // Output standard message for other browsers
+      else {
+        console.log('Made by MDEV Digital 😜 | https://mdev.digital');
+      }
     });
   },
 
