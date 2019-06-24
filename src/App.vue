@@ -83,8 +83,8 @@ export default {
     // the prerenderer. These async calls will only execute on the intended
     // client side environment.
     if (!window.__PRERENDER_INJECTED) {
-      // Load Google Maps
-      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=APIKEYHERE-TODO', true, true);
+      // Load Google Maps - TODO Update API Key with new one for this project
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAo2PdZvAAXRAzbgx_x5YT2jKhQH50DsY0', true, true);
       // Load Google Tag Manager
       this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-1', true, true);
       this.asyncScript( '/js/googletag.js', false, false);
@@ -154,8 +154,7 @@ export default {
 
   methods: {
     skipNav() {
-      var anchor = $("#mainContent").offset().top;
-      $('html,body').scrollTop(anchor);
+      this.scrollToHash('#mainContent', 50);
     },
     // Check Cookies & Show Popup
     checkCookie() {

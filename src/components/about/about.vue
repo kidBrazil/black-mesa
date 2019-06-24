@@ -1,7 +1,6 @@
 <template lang="pug">
   .mdev-main-content
-    h1
-      |ABOUT
+    contact-map( :animLoaded="anim" )
 </template>
 
 
@@ -10,6 +9,7 @@
 <script>
 // Import SEO From File
 import SEOData       from '../../seo-meta.js';
+import ContactMap     from '../shared/contact-map.vue';
 
 export default {
   name: 'About',
@@ -17,8 +17,18 @@ export default {
 
   data: function(){
     return {
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      anim: false
     };
+  },
+
+  mounted (){
+    // TODO - Replace interval with proper transition animation
+    setTimeout( () => {
+      // Anim switches to true when the animation is finished
+      // this will trigger the map rendering
+      this.anim = true;
+    }, 250);
   },
   // Meta SEO Function
   metaInfo() {
@@ -37,6 +47,9 @@ export default {
     };
   },
 
+  components: {
+    'contact-map' : ContactMap
+  }
 };
 </script>
 
