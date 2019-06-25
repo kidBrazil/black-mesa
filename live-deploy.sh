@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Get distributions by checking AWS first...
-S3_LIVE_BUCKET="s3://mdev.digital"
-CF_MAIN_DISTRIBUTION="E1ZHCG9AZMYVVV"
-CF_REDIRECT_DISTRIBUTION="EXGWDUWN7ENKU"
+S3_LIVE_BUCKET="s3://BUCKET-HERE"
+CF_MAIN_DISTRIBUTION="CF-DST-ID"
+CF_REDIRECT_DISTRIBUTION="CF-DST-ID"
 
 # Error Handling Function
 error_handle() {

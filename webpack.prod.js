@@ -176,7 +176,7 @@ module.exports = merge(common, {
       // Process page before output..
       postProcess(renderedRoute) {
         // Remove active classes from prerendered routes
-        //renderedRoute.html = renderedRoute.html
+        renderedRoute.html = renderedRoute.html
           //.replace('--mask-active', '')
           //.replace('--nav-active', '')
           //.replace('--active', '')
