@@ -60,7 +60,7 @@ export default{
   position: relative;
   left: 0;
   overflow: hidden;
-  height: 90vh;
+  height: 100vh;
   z-index: 3;
   opacity: 0;
   transition: opacity 1.4s;
