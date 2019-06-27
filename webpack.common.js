@@ -110,7 +110,7 @@ module.exports = {
       // Image Processing
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loaders: [ 'file-loader?context=src/assets/images&name=assets/images/[path][name].[ext]', {
+        loaders: [ 'file-loader?context=src/assets/images&name=assets/images/[path][hash].[ext]', {
           loader: 'image-webpack-loader',
           query: {
             // JPEG Processing
