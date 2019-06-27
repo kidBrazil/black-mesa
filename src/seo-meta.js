@@ -35,8 +35,6 @@ let social = {
 
 // General Site Wide SEO
 let general = {
-  ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
-  twimage: 'social/MDEV-TW-Card-Home_v01.png',
   title: 'TODO-Update-Title',
   desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
 };
