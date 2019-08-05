@@ -32,14 +32,14 @@
     "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
+    "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-parameters": "^7.4.3",
     "@babel/polyfill": "^7.4.3",
-    "@babel/preset-env": "^7.5.0",
-    "@fortawesome/fontawesome-pro": "^5.9.0",
+    "@babel/preset-env": "^7.5.5",
+    "@fortawesome/fontawesome-pro": "^5.10.1",
     "@moreira-development/crowbar-sass": "^0.1.2",
-    "@vue/babel-preset-app": "^3.9.0",
+    "@vue/babel-preset-app": "^3.10.0",
     "autoprefixer": "^8.5.0",
     "babel-loader": "v8.0.0-beta.0",
     "clean-webpack-plugin": "^0.1.19",
@@ -79,11 +79,11 @@
     "vue-check-view": "^0.2.4",
     "vue-i18n": "^5.0.0",
     "vue-in-viewport-directive": "^1.1.4",
-    "vue-loader": "^15.7.0",
+    "vue-loader": "^15.7.1",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   }
