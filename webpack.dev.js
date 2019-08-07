@@ -1,5 +1,6 @@
-// MDEV Digital - Webpack Boilerplate[VueJS]
+// Black Mesa - Webpack Boilerplate[VueJS]
 // Webpack 4 Configuration file
+// author: Lucas Moreira <hello@lucasmoreira.dev>
 // -----------------------------------------
 // PRODUCTION ENVIRONMENT
 // ----------------------------------------

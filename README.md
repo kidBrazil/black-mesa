@@ -1,11 +1,8 @@
-![MDEV Digital](https://mdevcdn.digital/images/githublogo.svg)
+![BLACK MESA](https://mdevcdn.digital/images/blackmesalogo2.svg)
 
 # [ IMPORTANT ] :rotating_light:
 
 ## First rodeo? READ THE DOCS!
-Please make sure you are familiar with the MDEV branching strategy and pull
-request rules. You can find details under `docs/branching.md`.
-
 There are also several other documents covering most of the functions and setup
 of this Vue boilerplate.
 

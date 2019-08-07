@@ -115,15 +115,15 @@ export default {
       // style each block in order below it
       if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
         window.console.log.apply(console, [
-          "\n %c Made with SASS by MDEV Digital 😜",
-          "color: #fff; background: #16b1a9; ;font-family: sans-serif; text-transform: uppercase; font-size: 225%; font-weight: 700; padding:10px; border-radius: 20px 0 20px 0;"
+          "\n %c Made with SASS by Lucas Moreira 😜",
+          "color: #fff; background: #f06404; ;font-family: sans-serif; text-transform: uppercase; font-size: 225%; font-weight: 700; padding:10px; border-radius: 20px 0 20px 0;"
         ]);
         window.console.log.apply(console, [
         ]);
       }
       // Output standard message for other browsers
       else {
-        console.log('Made by MDEV Digital 😜 | https://mdev.digital');
+        console.log('Made by Lucas Moreira 😜');
       }
     });
   },

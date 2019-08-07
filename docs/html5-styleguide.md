@@ -31,7 +31,7 @@ and Tabs because it complicates Git Diff.
 <A HREF="/" Class="Some-CLASS">Home</A>
 
 <!-- Recommended -->
-<A ref="/" class="mdev-some-class">Home</A>
+<A ref="/" class="blk-some-class">Home</A>
 ```
 
 3. Trailing White Space
@@ -180,9 +180,9 @@ descriptive. Keep selectors in lowercase and separated by dashes "-"
 separated by dashes "-"
 
 ```html
-<nav class="mdev-main-nav"</nav>
+<nav class="blk-main-nav"</nav>
 
-<div class="mdev-user-profile"></div>
+<div class="blk-user-profile"></div>
 ```
 
 3. JavaScript Selectors
@@ -199,8 +199,8 @@ with `js_` and is followed by semantic names separated by an underscore.
 <button class="js_button_selector">Click Me</button>
 
 <!-- Data Attribute JS Selector -->
-<button data-button-selector class="mdev-some-class">Click Me</button>
+<button data-button-selector class="blk-some-class">Click Me</button>
 
 <!-- ID Selector - Last Resort -->
-<button id="js_button_selector" class="mdev-some-class">Click Me</button>
+<button id="js_button_selector" class="blk-some-class">Click Me</button>
 ```

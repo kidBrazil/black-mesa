@@ -2,7 +2,7 @@
 clear
 # [ Black Mesa - Vue.js Dependencies ]
 # ------------------------------------------------------------------
-# Lucas Moreira - l.moreira@live.ca
+# Lucas Moreira - hello@lucasmoreira.dev
 # ------------------------------------------------------------------
 #
 # Setup Bash Script for installing Node dependencies and running dev server

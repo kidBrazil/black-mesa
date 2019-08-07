@@ -1,8 +1,8 @@
 {
   "name": "black-mesa-vue",
-  "description": "MDEV DIGITAL | We are a hybrid agency specializing in custom software development, branding and marketing",
+  "description": "Complete Vue.JS Boilerplate for kickstarting projects.",
   "version": "1.0.0",
-  "author": "MDEV Digital <contact@mdev.digital>",
+  "author": "Lucas Moreira <hello@lucasmoreira.dev>",
   "private": true,
   "main": "webpack.config.js",
   "scripts": {

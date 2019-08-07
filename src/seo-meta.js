@@ -1,4 +1,4 @@
-// MDEV Site SEO
+// Black Mesa Site SEO
 // Flat File JSON Object for easy SEO implementation
 
 // Staging Build Flag -------------------------------
@@ -17,8 +17,8 @@ let stagingBuild = true;
 
 // Template INFO - Dictates slug for title and site URL's
 let template = {
-  slug: '%s | MDEV Digital | CLIENT PROJECT',
-  slugAddon: ' | MDEV Digital | CLIENT PROJECT',
+  slug: '%s | Black Mesa | CLIENT PROJECT',
+  slugAddon: ' | Black Mesa | CLIENT PROJECT',
   stageUrl: 'http://TODO-UPPDATE',
   liveUrl: 'https://TODO-UPDATE',
 };
@@ -28,7 +28,7 @@ let social = {
   appid: 'XXXXXX',
   ogtype: 'website',
   cardtype: 'summary_large_image',
-  twsite: '@MDEVdigital',
+  twsite: '@Nothinghere',
   ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
   twimage: 'social/MDEV-TW-Card-Home_v01.png'
 };
