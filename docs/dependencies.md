@@ -19,7 +19,7 @@ This document will cover a brief listing of the dependencies being used on this 
 * [sass-resources-loader](https://github.com/shakacode/sass-resources-loader "SASS Share Resources")
 
 ##:floppy_disk:Dev Dependencies
-* [sass-boilerplate-lean](https://github.com/MoreiraDevelopment/sass-boilerplate/tree/master/sass-boilerplate-lean "MDEV Sass Boilerplate")
+* [crowbar-sass](https://github.com/kidBrazil/crowbar "Crowbar SASS Boilerplate")
 
 * [Babel](http://babeljs.io/docs/setup/ "Babel Documentation")
 
