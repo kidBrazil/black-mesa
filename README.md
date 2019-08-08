@@ -1,11 +1,8 @@
-![MDEV Digital](https://mdevcdn.digital/images/githublogo.svg)
+![BLACK MESA](https://mdevcdn.digital/images/blackmesalogo3.svg)
 
 # [ IMPORTANT ] :rotating_light:
 
 ## First rodeo? READ THE DOCS!
-Please make sure you are familiar with the MDEV branching strategy and pull
-request rules. You can find details under `docs/branching.md`.
-
 There are also several other documents covering most of the functions and setup
 of this Vue boilerplate.
 
@@ -23,13 +20,7 @@ in the project either with `git grep` or your IDE of choice.
    boilerplate up for another project. Make sure you can *see hidden files*
    before proceeding to extract.
 
-2. Create a new repository inside of the MdevDigital corporate Github. Process
-   is simple, head on over to [MDEV Digital Git](https://git.mdev.digital "MDEV
-   GIT") and click the *new* button.
-
-   Make sure to name the repository with the appropriate name. It starts with
-a three letter acronym for the client and then the name of the project separated
-by dashes. Something like `mdev-test-project` is quite acceptable.
+2. Create a new repository to house your project.
 
   Initialize the repository with a README and pick *node* for the gitignore.
 

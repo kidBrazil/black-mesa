@@ -1,5 +1,6 @@
-// MDEV Digital - Webpack Boilerplate[VueJS]
+// Black Mesa - Webpack Boilerplate[VueJS]
 // Webpack 4 Configuration file
+// author: Lucas Moreira <hello@lucasmoreira.dev>
 // -----------------------------------------
 // PRODUCTION ENVIRONMENT
 // ----------------------------------------
@@ -115,9 +116,9 @@ module.exports = merge(common, {
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
       // CHANGE COLOR OF THEME - TODO
-      background: '#0a1315',
+      background: '#f06404',
       // CHANGE PROJECT TITLE - TODO
-      title: 'MDEV | The Start Of Something New',
+      title: 'Black MEsa | The Start Of Something New',
       // Icons to export
       icons: {
         android: true,

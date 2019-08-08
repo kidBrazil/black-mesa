@@ -11,22 +11,22 @@ and Tabs because it complicates Git Diff.
 
 ```scss
 /* Correct Spacing */
-.mdev-some-class {
+.blk-some-class {
   width: 10px;
   height: 10px;
 
-  .mdev-some-child-class {
+  .blk-some-child-class {
     color: black;
     overflow: visible;
   }
 }
 
 /* Not Correct Spacing */
-.mdev-some-class {
+.blk-some-class {
     width: 10px;
     height: 10px;
 
-    .mdev-some-child-class {
+    .blk-some-child-class {
       color: black;
       overflow: visible;
    }
@@ -38,7 +38,7 @@ and Tabs because it complicates Git Diff.
 
 ```scss
 /* Not recommended */
-.mdev-some-class { ... }
+.blk-some-class { ... }
 
 /* Recommended */
 .Mdev-SOME-CLASS { ... }
@@ -54,9 +54,9 @@ code. Don't go overboard but it is nice to leave a trail for other devs.
 
 ```scss
 /* [ New Section Start ] -------------- */
-.mdev-some-class { ... }
+.blk-some-class { ... }
 
-.mdev-some-other-related-class { ... }
+.blk-some-other-related-class { ... }
 
 .some-magic-class {
   /* used magic number to fix the layout do not change */
@@ -84,17 +84,17 @@ on the code.
 ... Use descriptive names that make sense for what the class purpose is. Keep it to consise, semantic lower case names separated by dashes "-".
 
 ```scss
-.mdev-main-navigation { ... }
+.blk-main-navigation { ... }
 
-.mdev-main-footer { ... }
+.blk-main-footer { ... }
 
-.mdev-profile-section {
+.blk-profile-section {
   position: relative;
   width: 80%;
 
-  .mdev-profile-picture { ... }
+  .blk-profile-picture { ... }
 
-  .mdev-profile-select { ... }
+  .blk-profile-select { ... }
 
 }
 ```
@@ -122,9 +122,9 @@ table { ... }
 
 /* When necessary... */
 
-.mdev-some-class p { ... }
+.blk-some-class p { ... }
 
-.mdev-some-parent {
+.blk-some-parent {
   p { ... }
 
   table { ... }
@@ -150,13 +150,13 @@ descriptive. Keep selectors in lowercase and separated by dashes "-"
 separated by dashes "-"
 
 ```scss
-.mdev-main-nav { ... }
+.blk-main-nav { ... }
 
-.mdev-user-profile { ... }
+.blk-user-profile { ... }
 
-.mdev-parent-component {
+.blk-parent-component {
 
-  .mdev-child-component { ... }
+  .blk-child-component { ... }
 
   .--child-modifier { ... }
 }
@@ -175,9 +175,9 @@ separated by dashes "-"
 
 /* Component Classes */
 
-.mdev-main-nav { ... }
+.blk-main-nav { ... }
 
-.mdev-content-section { ... }
+.blk-content-section { ... }
 
 /* Modifier Classes */
 
@@ -212,7 +212,7 @@ $font-size-body: 16px;
 
 ```SCSS
 /* Not Recommended */
-.mdev-some-class {
+.blk-some-class {
   border-top-style: none;
   font-family: palatino, georgia, serif;
   font-size: 100%;
@@ -225,7 +225,7 @@ $font-size-body: 16px;
 
 /* Recommended Approach */
 
-.mdev-some-class {
+.blk-some-class {
   border-top: 0;
   font: 100%/1.6 palatino, georgia, serif;
   padding: 0 1em 2em;

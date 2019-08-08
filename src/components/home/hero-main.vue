@@ -1,5 +1,5 @@
 <template lang="pug">
-  .mdev-image
+  .blk-image
     img(:src="loadImage(homeBrand)")
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'MainHero',
   data: function() {
     return{
-      homeBrand: 'main-logo.png'
+      homeBrand: 'blackmesalogo2.svg'
     };
   },
 
@@ -31,9 +31,9 @@ export default {
 /*-------------------------------------*/
 /* HERO MAIN Component Styles
 /--------------------------------------*/
-.mdev-image {
-  width: 20%;
-  margin: 30px auto;
+.blk-image {
+  width: 50%;
+  margin: 120px auto 60px;
 
   img {
     width: 100%;
