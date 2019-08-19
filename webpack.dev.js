@@ -17,6 +17,7 @@ module.exports = merge(common, {
   devServer: {
      historyApiFallback: true,
      noInfo: true,
+     overlay: true,
      contentBase: './dist'
   },
 
