@@ -26,10 +26,10 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "vue": "^2.6.10",
-    "vue-meta": "^1.6.0",
-    "vue-router": "^3.0.7",
-    "vuex": "^3.1.1"
+    "vue": "^2.6.12",
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.4.9",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -80,7 +80,7 @@
     "vue-in-viewport-directive": "^1.1.4",
     "vue-loader": "^15.7.1",
     "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.6.12",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
